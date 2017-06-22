@@ -1,0 +1,142 @@
+/* ==========================================================================
+	 Component #Navigation
+
+	 @package     @TODO
+	 @subpackage	Component\Navigation
+	 @version			1.0.0
+	 @author			Thoughts & Ideas <hello@thoughtsideas.uk>
+	 @url					https://www.thoughtsideas.uk/
+	 @copyright		Copyright (c) 2017 Thoughts & Ideas
+	 @license			https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
+	 @link				@TODO
+	 ========================================================================== */
+
+/* Navigation Settings
+ *
+ * These settings should be overwritten in your settings.
+	 ========================================================================== */
+
+$navigation-heading-font-family:                 sans !default;
+
+/**
+ * Site wide Navigation.
+ *
+ * 1. Set relative for use with faux border bottom.
+ * 2. Make touch / selection area bigger for small screens.
+ */
+.c-navigation-site {
+	display: flex;
+	font-family: $navigation-heading-font-family;
+	font-size: $font-size-small;
+	font-weight: $font-weight-bold;
+	text-transform: uppercase;
+}
+
+@include for-medium-portrait-up {
+	.c-navigation-site__item {
+		font-size: $font-size-medium;
+		line-height: 1;
+	}
+}
+
+.c-navigation-site__item {
+	position: relative; /* [1] */
+}
+
+.c-navigation-site__item a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	color: $color-neutral-25;
+	text-decoration: none;
+}
+
+@include for-small-screen-only {
+	.c-navigation-site__item a {
+		line-height: 4.8; /* [2] */
+	}
+}
+
+.c-navigation-site__item a:hover,
+.c-navigation-site__item a:focus {
+	color: $color-active;
+	background-color: $color-neutral-90;
+
+	&::after {
+		content: '';
+		position: absolute;
+		display: block;
+		height: 3px;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		background: $color-red;
+	}
+}
+
+/**
+ * Navigation Header
+ */
+.c-navigation-header {
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: auto;
+}
+
+@include for-medium-portrait-up {
+
+	.c-navigation-header {
+		grid-template-columns: 33.333% 66.666%;
+		grid-template-rows: auto;
+	}
+}
+
+
+@include for-medium-landscape-up {
+
+	.c-navigation-header {
+		grid-column: 2 / span 2;
+	}
+}
+
+@include for-large-up {
+
+	.c-navigation-header {
+		grid-column: 2 / span 3;
+	}
+}
+
+/**
+ * Navigation Footer
+ */
+.c-navigation-footer {
+	/** @TODO */
+}
+
+@include for-medium-landscape-up {
+	.c-navigation-footer {
+		grid-column: 2;
+	}
+}
+
+@include for-large-up {
+	.c-navigation-footer {
+		grid-column: 2 / span 2;
+	}
+}
+
+@include for-super-up {
+	.c-navigation-footer {
+		grid-column: 2 / span 2;
+		display: flex;
+	}
+}
+
+.c-navigation-footer li:not( :last-child )::after {
+	margin-right: 0.5rem;
+	margin-left: 0.25rem;
+	color: $color-neutral;
+	font-weight: 500;
+	content: '\00a0/';
+}

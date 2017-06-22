@@ -1,0 +1,25 @@
+/**
+ * Entry.
+ *
+ * Content Section.
+ */
+
+.c-entry {
+	/* @TODO */
+}
+
+.c-entry--header {
+	margin-bottom: $space-l;
+}
+
+.c-entry--content {
+	margin-bottom: $space-l;
+}
+
+.c-entry--footer {
+	margin-bottom: $space-l;
+}
+
+.s-content > p:first-of-type {
+	font-size: $font-size-large;
+}

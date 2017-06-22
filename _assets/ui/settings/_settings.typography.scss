@@ -1,0 +1,99 @@
+/**
+ * Typography Variables.
+ */
+
+$font-family-primary: 'karmina-sans',
+	-apple-system,
+	blinkmacsystemfont,
+	'Segoe UI',
+	roboto,
+	helvetica,
+	arial,
+	sans-serif;
+
+$font-family-copy:
+	'karmina',
+	'Apple Garamond',
+	'Baskerville',
+	'Georgia',
+	'Times New Roman',
+	'Roboto Slab',
+	'Droid Serif',
+	'Times',
+	serif;
+
+$font-family-code:
+	'SF Mono',
+	'Monaco',
+	'Inconsolata',
+	'Fira Mono',
+	'Droid Sans Mono',
+	'Source Code Pro',
+	monospace;
+
+$font-family-pre: 'Courier 10 Pitch', courier, monospace;
+
+/* Font Weights
+ *
+ * Require less font weights to be loaded.
+ * Adjust weights we don't use to display the closest weight we do.
+ *
+ * 1. 100 - Thin (Hairline).
+ * 2. 200 - Extra Light (Ultra Light).
+ * 3. 300 - Light.
+ * 4. 400 - Normal.
+ * 5. 500 - Medium.
+ * 6. 600 - Semi Bold (Demi Bold).
+ * 7. 700 - Bold.
+ * 8. 800 - Extra Bold (Ultra Bold).
+ * 9. 900 - Black (Heavy).
+	 ========================================================================== */
+
+$font-weight-thin:           300; /* [1] */
+$font-weight-light-extra:    300; /* [2] */
+$font-weight-light:          300; /* [3] */
+$font-weight-normal:         400; /* [4] */
+$font-weight-medium:         400; /* [5] */
+$font-weight-bold-semi:      700; /* [6] */
+$font-weight-bold:           700; /* [7] */
+$font-weight-bold-extra:     700; /* [8] */
+$font-weight-black:          700; /* [9] */
+
+/**
+ * Base Font Size.
+ */
+$font-size-base: 1;
+// Multipliers.
+$font-size-base-medium-up: 1.125;
+$font-size-base-large-up: 1.375;
+$font-size-base-super-up: 1.875;
+
+/* Modular Scale.
+	 ========================================================================== */
+$font-size-small: 0.618rem;
+$font-size-medium: 1rem;
+$font-size-large: 1.618rem;
+$font-size-x-large: 2.618rem;
+$font-size-xx-large: 4.236rem;
+$font-size-super: 2.445rem;
+$font-size-x-super: 2.746rem;
+
+$line-height-heading: 1.1;
+$line-height-text: 1.5;
+$line-height-reset: 1;
+$line-height-pre: 1.5;
+
+$field-label-font-family: $font-family-primary;
+
+$navigation-heading-font-family: $font-family-primary;
+
+/* Headings
+	 ========================================================================== */
+$heading-page-font-size:                         $font-size-xx-large;
+$heading-page-line-height:                       $line-height-heading;
+
+$heading-page-sub-font-size:                     $font-size-x-large;
+$heading-page-sub-line-height:                   $line-height-heading;
+
+$heading-section-font-size:                         $font-size-x-large;
+$heading-section-line-height:                       $line-height-heading;

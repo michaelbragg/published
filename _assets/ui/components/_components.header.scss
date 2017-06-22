@@ -1,0 +1,96 @@
+/* ==========================================================================
+	 Component #Header
+
+	 @package     @TODO
+	 @subpackage	Component\Header
+	 @version			1.0.0
+	 @author			Thoughts & Ideas <hello@thoughtsideas.uk>
+	 @url					https://www.thoughtsideas.uk/
+	 @copyright		Copyright (c) 2017 Thoughts & Ideas
+	 @license			https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
+	 @link				@TODO
+	 ========================================================================== */
+
+/* Header Settings
+	 ========================================================================== */
+
+/* Site Wide Header Layout
+ *
+ * 1. Stops the WordPress admin bar overlaying our header component.
+ * 2. Apply border to parent element, allowing border to be full viewport width.
+ * 3. Remove header margin if our page has an featured image.
+	 ========================================================================== */
+
+.c-header-site__parent {
+	margin-bottom: $space-l;
+	border-bottom: 3px solid $color-neutral-90; /* [2] */
+}
+
+.has-featured-image .c-header-site__parent {
+	margin-bottom: 0; /* [3] */
+}
+
+.c-header-site {
+	display: grid;
+	grid-template-columns:
+		[bleed-start] 0
+		[full-start] 1fr
+		[full-end] 0
+		[bleed-end];
+	grid-column-gap: 0.5rem;
+}
+
+@include for-medium-portrait-up {
+	.c-header-site {
+		grid-template-columns:
+			[bleed-start] 0
+			[full-start] minmax(min-content, 33fr)
+			[aside] 66fr
+			[full-end] 0
+			[bleed-end];
+		grid-column-gap: 1rem;
+	}
+}
+
+.admin-bar .c-header-site {
+	top: 46px; /* [1] */
+}
+
+@media ( min-width: 783px ) {
+	.admin-bar .c-header-site {
+		top: 32px; /* [1] */
+	}
+}
+
+/**
+ * Brand (logo) holder
+ */
+
+.c-header-site__brand {
+	grid-column-start: full;
+	grid-column-end: full;
+	max-height: 2.6667rem;
+}
+
+@include for-medium-portrait-up {
+	.c-header-site__brand {
+		grid-column-start: full;
+		grid-column-end: aside;
+	}
+}
+
+/**
+ * Navigation holder
+ */
+
+.c-header-site__navigation {
+	grid-column-start: bleed;
+	grid-column-end: bleed;
+}
+
+@include for-medium-portrait-up {
+	.c-header-site__navigation {
+		grid-column-start: aside;
+		grid-column-end: full;
+	}
+}

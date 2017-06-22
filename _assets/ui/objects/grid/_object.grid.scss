@@ -1,0 +1,106 @@
+/* ==========================================================================
+	 Object #Grid
+
+	 @package     @TODO
+	 @subpackage	Object\Grid
+	 @version			1.0.0
+	 @author			Thoughts & Ideas <hello@thoughtsideas.uk>
+	 @url					https://www.thoughtsideas.uk/
+	 @copyright		Copyright (c) 2017 Thoughts & Ideas
+	 @license			https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
+	 @link				@TODO
+	 ========================================================================== */
+
+/* Content Grid
+	 ========================================================================== */
+
+.o-content {
+	margin: 0 auto;
+	display: grid;
+	grid-column-gap: 0.5rem;
+	grid-template-columns:
+		[bleed-start] 0
+		[main-start] 1fr
+		[main-end] 0
+		[bleed-end];
+}
+
+@include for-medium-portrait-up {
+	.o-content {
+		margin: 0 auto;
+		display: grid;
+		grid-column-gap: 1rem;
+		grid-template-columns:
+			[bleed-start] 0
+			[full-start] 8.9499fr
+			[main-start] 64.0629fr
+			[main-end] 26.8749fr
+			[full-end] 0
+			[bleed-end];
+	}
+}
+
+@include for-large-up {
+	.o-content {
+		margin: 0 auto;
+		display: grid;
+		grid-column-gap: 1rem;
+		grid-template-columns:
+			[bleed-start] 0
+			[full-start] 10fr
+			[main-start] 19.9898fr
+			[secondary] 19.9898fr
+			[main-end] 49.9797fr
+			[full-end] 0
+			[bleed-end];
+	}
+}
+
+.o-content > * {
+	grid-column-start: main;
+	grid-column-end: main;
+}
+
+/**
+ * Bleed – Runs content to the edge of the viewport width.
+ */
+
+.o-content__bleed {
+	grid-column-start: bleed;
+	grid-column-end: bleed;
+}
+
+@include for-medium-portrait-up {
+	.o-content__full {
+		grid-column-start: full;
+		grid-column-end: full;
+	}
+}
+
+@include for-medium-portrait-up {
+	.o-content__bleed--right {
+		grid-column-start: full;
+		grid-column-end: bleed;
+	}
+}
+
+@include for-medium-portrait-up {
+	.o-content__bleed--left {
+		grid-column-start: bleed;
+		grid-column-end: full;
+	}
+}
+
+@include for-medium-portrait-up {
+	.o-content__pull--right {
+		grid-column-start: main;
+		grid-column-end: full;
+	}
+}
+
+@include for-medium-portrait-up {
+	.o-content__pull--left {
+		grid-column-start: full;
+		grid-column-end: main;
+	}
+}

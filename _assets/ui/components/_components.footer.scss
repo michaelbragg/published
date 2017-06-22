@@ -1,0 +1,108 @@
+/* ==========================================================================
+	 Component #Footer
+
+	 @package     @TODO
+	 @subpackage	Component\Footer
+	 @version			1.0.0
+	 @author			Thoughts & Ideas <hello@thoughtsideas.uk>
+	 @url					https://www.thoughtsideas.uk/
+	 @copyright		Copyright (c) 2017 Thoughts & Ideas
+	 @license			https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
+	 @link				@TODO
+	 ========================================================================== */
+
+/* Footer Settings
+	 ========================================================================== */
+
+$footer-site-links-color:                        hsl(0, 6%, 17%) !default;
+$footer-site-background-color:                  hsl(0, 7%, 92%) !default;
+
+/* Site Wide Footer Layout
+ *
+ * 1. Gives the links a touch area big enough for a finger.
+	 ========================================================================== */
+
+.c-footer-site {
+	display: grid;
+	grid-template-columns:
+		[bleed-start] 0
+		[full-start] 1fr
+		[full-end] 0
+		[bleed-end];
+	grid-column-gap: 0.5rem;
+
+	ul {
+		line-height: 3;
+	}
+}
+
+@include for-medium-portrait-up {
+	.c-footer-site {
+		grid-template-columns:
+			[bleed-start] 0
+			[full-start] 66fr
+			[aside] 33fr
+			[full-end] 0
+			[bleed-end];
+		grid-column-gap: 1rem;
+	}
+}
+
+.c-footer-site__navigation {
+	grid-column-start: full;
+	grid-column-end: full;
+}
+
+@include for-medium-portrait-up {
+	.c-footer-site__navigation {
+		grid-column-start: full;
+		grid-column-end: aside;
+	}
+}
+
+.c-footer-site__social-media {
+	grid-column-start: full;
+	grid-column-end: full;
+}
+
+@include for-medium-portrait-up {
+	.c-footer-site__social-media {
+		grid-column-start: aside;
+		grid-column-end: full;
+	}
+}
+
+.c-footer-site--parent {
+	background-color: $footer-site-background-color;
+	font-size: 14px;
+}
+
+.c-footer-site--parent a {
+	color: $footer-site-links-color;
+	text-decoration: none;
+	border-color: inherit;
+}
+
+.c-footer-site--parent a:hover,
+.c-footer-site--parent a:focus {
+	border-bottom: 1px solid;
+}
+
+@include for-medium-landscape-up {
+
+	.c-footer-site__social-media {
+		display: flex;
+		justify-content: flex-end;
+	}
+}
+
+.c-footer-site__social-media li {
+	margin-right: 0.5rem;
+}
+
+/**
+ * 1. Remove margins to align content with baseline
+ */
+.c-copyright {
+	margin: 0; /* [1] */
+}

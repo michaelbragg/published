@@ -1,0 +1,198 @@
+/* ==========================================================================
+	 Component #Field
+
+	 @package     @TODO
+	 @subpackage	Component\Field
+	 @extends			Element\Field
+	 @version			1.0.0
+	 @author			Thoughts & Ideas <hello@thoughtsideas.uk>
+	 @url					https://www.thoughtsideas.uk/
+	 @copyright		Copyright (c) 2017 Thoughts & Ideas
+	 @license			https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
+	 @link				@TODO
+	 ========================================================================== */
+
+/* Field settings
+	 ========================================================================== */
+
+$field-background-color:                        transparent !default;
+
+$field-text-color:                              hsl(0, 0%, 0%) !default;
+$field-text-color-hover:                        hsl(0, 0%, 0%) !default;
+$field-text-color-focus:                        hsl(207, 90%, 54%) !default;
+$field-text-color-placeholder:                  hsl(0, 0%, 60%) !default;
+
+$field-border-color:                            hsl(0, 0%, 60%) !default;
+$field-border-style:                            solid !default;
+$field-border-width:                            0 0 1px 0 !default;
+
+$field-border-hover-color:                      hsl(0, 0%, 46%) !default;
+$field-border-hover-style:                      solid !default;
+$field-border-hover-width:                      0 0 1px 0 !default;
+
+$field-border-focus-color:                      hsl(207, 90%, 54%) !default;
+$field-border-focus-style:                      solid !default;
+$field-border-focus-width:                      0 0 2px 0 !default;
+
+$field-note-color:                              hsl(0, 0%, 46%) !default;
+
+/**
+ * Fields are elements wrappers used to makeup a form.
+ */
+
+.c-field {
+	margin-bottom: 1rem;
+}
+
+.c-field__label {
+	order: 1;
+}
+
+.c-field__input {
+	order: 2;
+}
+
+.ccf-form-wrapper .field-description, /* [99] */
+.c-field__note {
+	order: 3;
+	color: $field-note-color;
+}
+
+/* Input
+ *
+ * 99. Hook into Custom Contact Forms Plugin defaults.
+	 ========================================================================== */
+
+.c-input .field-input, /* [99] */
+.c-input__input {
+	margin: 0 0 8px;
+	width: 100%; /* [2] */
+	border-color: $field-border-color;
+	border-style: $field-border-style;
+	border-width: $field-border-width;
+	color: $field-text-color;
+
+	&::placeholder {
+		color: $field-text-color-placeholder;
+	}
+
+	&:hover {
+		border-color: $field-border-hover-color;
+		border-style: $field-border-hover-style;
+		border-width: $field-border-hover-width;
+	}
+
+	&:focus {
+		border-color: $field-border-focus-color;
+		border-style: $field-border-focus-style;
+		border-width: $field-border-focus-width;
+		outline: none; /* [1] */
+	}
+}
+
+/* Textarea
+ *
+ * 99. Hook into Custom Contact Forms Plugin defaults.
+	 ========================================================================== */
+
+.c-textarea .field-input, /* [99] */
+.c-textarea__input {
+	margin: 0 0 8px;
+	width: 100%; /* [2] */
+	border-color: $field-border-color;
+	border-style: $field-border-style;
+	border-width: $field-border-width;
+	color: $field-text-color;
+
+	&::placeholder {
+		color: $field-text-color-placeholder;
+	}
+
+	&:hover {
+		border-color: $field-border-hover-color;
+		border-style: $field-border-hover-style;
+		border-width: $field-border-hover-width;
+	}
+
+	&:focus {
+		border-color: $field-border-focus-color;
+		border-style: $field-border-focus-style;
+		border-width: $field-border-focus-width;
+		outline: none; /* [1] */
+	}
+}
+
+/* Select
+ *
+ * 1. Reset browsers chosen appearance.
+ * 2. Make full width of parent element.
+ * 3. Remove browser default border radius.
+ * 4. Stop text overlaying background.
+ * 99. Hook into Custom Contact Forms Plugin defaults.
+	 ========================================================================== */
+
+.c-select .field-input, /* [99] */
+.c-select__input {
+	-webkit-appearance: none; /* [1] */
+	appearance: none; /* [1] */
+	width: 100%; /* [2] */
+	padding: 0 25px 0 0;
+	background-color: transparent;
+	background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNiIgd2lkdGg9IjEwIj48cG9seWdvbiBwb2ludHM9IjAsMCAxMCwwIDUsNiIgc3R5bGU9ImZpbGw6cmdiYSgwLDAsMCwuMjQpOyIvPjwvc3ZnPg==');
+	background-repeat: no-repeat;
+	background-position: right center;
+	border-color: $field-border-color;
+	border-radius: 0; /* [3] */
+	border-style: $field-border-style;
+	border-width: $field-border-width;
+	color: $field-text-color;
+	
+	&:hover {
+		border-color: $field-border-hover-color;
+		border-style: $field-border-hover-style;
+		border-width: $field-border-hover-width;
+	}
+
+	&:focus {
+		border-color: $field-border-focus-color;
+		border-style: $field-border-focus-style;
+		border-width: $field-border-focus-width;
+		outline: none; /* [1] */
+	}
+}
+
+/* Checkbox
+ * 1. Align checkbox bottom edge with type's baseline.
+ * 99. Hook into Custom Contact Forms Plugin defaults.
+	 ========================================================================== */
+
+.c-checkbox .field-input, /* [99] */
+.c-checkbox__input {
+	margin-right: 0.5rem;
+	vertical-align: text-bottom; /* [1] */
+}
+
+/* Label
+	 ========================================================================== */
+
+label {
+	display: block;
+	margin: 0 0 8px;
+
+	&:has( ~ input:focus ) {
+		color: $field-border-focus-color;
+	}
+}
+
+/* Validation
+	 ========================================================================== */
+
+.ccf-form-wrapper .field label.main-label .required, /* [99] */
+.is_required {
+	color: $color-alert-danger;
+}
+
+.ccf-form-wrapper .error, /* [99] */
+.has_error {
+	color: $color-alert-danger;
+}

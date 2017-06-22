@@ -1,0 +1,56 @@
+/* ==========================================================================
+	 Component #Headings
+
+	 @package     @TODO
+	 @subpackage	Component\Headings
+	 @extends			Element\Headings
+	 @version			1.0.0
+	 @author			Thoughts & Ideas <hello@thoughtsideas.uk>
+	 @url					https://www.thoughtsideas.uk/
+	 @copyright		Copyright (c) 2017 Thoughts & Ideas
+	 @license			https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
+	 @link				@TODO
+	 ========================================================================== */
+
+/* Headings settings
+	 ========================================================================== */
+
+$heading-page-font-size:                         4.5rem !default;
+$heading-page-line-height:                       1.1 !default;
+$heading-page-color:                             hsl(0, 0%, 20%) !default;
+
+$heading-page-sub-font-size:                     1.2rem !default;
+$heading-page-sub-line-height:                   1.1 !default;
+$heading-page-sub-color:                         hsl(0, 0%, 20%) !default;
+
+$heading-section-font-size:                         1.2rem !default;
+$heading-section-line-height:                       1.1 !default;
+$heading-section-color:                             hsl(0, 0%, 20%) !default;
+
+.c-heading--page {
+	font-size: $heading-page-font-size;
+	line-height: $heading-page-line-height;
+	color: $heading-page-color;
+}
+
+.c-heading--page-sub {
+	font-size: $heading-page-sub-font-size;
+	line-height: $heading-page-sub-line-height;
+	color: $heading-page-sub-color;
+}
+
+.c-heading--section {
+	font-size: $heading-section-font-size;
+	line-height: $heading-section-line-height;
+	color: $heading-section-color;
+}
+
+.c-heading--main-sub {
+	color: $color-black;
+	font-size: $font-size-x-large;
+	font-weight: $font-weight-normal;
+}
+
+.c-heading--main-tertiary {
+	font-size: $font-size-large;
+}

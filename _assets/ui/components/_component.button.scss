@@ -1,0 +1,237 @@
+/* ==========================================================================
+	 Component #Button
+
+	 @package     @TODO
+	 @subpackage	Component\Button
+	 @version			1.0.0
+	 @author			Thoughts & Ideas <hello@thoughtsideas.uk>
+	 @url					https://www.thoughtsideas.uk/
+	 @copyright		Copyright (c) 2017 Thoughts & Ideas
+	 @license			https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
+	 @link				@TODO
+	 ========================================================================== */
+
+/* Button Settings
+ *
+ * These settings should be overwritten in your setting/colour file.
+	 ========================================================================== */
+
+/**
+ * Button: Defaults
+ */
+
+$button-padding:                            0 16px !default;
+$button-border-color:                       $color-neutral-50 !default;
+$button-border-radius:                      2px !default;
+$button-border-style:                       solid !default;
+$button-border-width:                       1px !default;
+$button-background-color:                   $color-neutral-75 !default;
+$button-text-color:                         hsl(0, 0%, 100%) !default;
+
+$button-focus-border-color:                 $color-neutral-25;
+$button-focus-background-color:             $color-neutral-50 !default;
+$button-focus-text-color:                   hsl(0, 0%, 100%) !default;
+
+$button-active-border-color:                $color-neutral-10;
+$button-active-background-color:            $color-neutral-25 !default;
+$button-active-text-color:                  hsl(0, 0%, 100%) !default;
+
+/**
+ * Button: Primary
+ */
+
+$button-primary-border-color:               hsl(208, 79%, 51%) !default;
+$button-primary-background-color:           hsl(207, 90%, 54%) !default;
+$button-primary-text-color:                 hsl(0, 0%, 100%) !default;
+
+$button-primary-focus-border-color:         hsl(210, 79%, 46%) !default;
+$button-primary-focus-background-color:     hsl(208, 79%, 51%) !default;
+$button-primary-focus-text-color:           hsl(0, 0%, 100%) !default;
+
+$button-primary-active-border-color:        hsl(212, 80%, 42%) !default;
+$button-primary-active-background-color:    hsl(210, 79%, 46%) !default;
+$button-primary-active-text-color:          hsl(0, 0%, 100%) !default;
+
+/**
+ * Button: Secondary
+ */
+
+$button-secondary-border-color:                  hsl(208, 79%, 51%) !default;
+$button-secondary-background-color:              hsl(207, 90%, 54%) !default;
+$button-secondary-text-color:                    hsl(0, 0%, 100%) !default;
+
+$button-secondary-focus-border-color:            hsl(210, 79%, 46%) !default;
+$button-secondary-focus-background-color:        hsl(208, 79%, 51%) !default;
+$button-secondary-focus-text-color:              hsl(0, 0%, 100%) !default;
+
+$button-secondary-active-border-color:           hsl(212, 80%, 42%) !default;
+$button-secondary-active-background-color:       hsl(210, 79%, 46%) !default;
+$button-secondary-active-text-color:             hsl(0, 0%, 100%) !default;
+
+/**
+ * Button: Danger
+ */
+
+$button-danger-border-color:                hsl(0, 65%, 51%) !default;
+$button-danger-background-color:            hsl(4, 90%, 58%) !default;
+$button-danger-text-color:                  hsl(0, 0%, 100%) !default;
+
+$button-danger-focus-border-color:          hsl(0, 66%, 47%) !default;
+$button-danger-focus-background-color:      hsl(1, 77%, 55%) !default;
+$button-danger-focus-text-color:            hsl(0, 0%, 100%) !default;
+
+$button-danger-active-border-color:         hsl(0, 73%, 41%) !default;
+$button-danger-active-background-color:     hsl(0, 65%, 51%) !default;
+$button-danger-active-text-color:           hsl(0, 0%, 100%) !default;
+
+/**
+ * @TODO Button: Disabled
+ */
+
+/* Button Defaults
+ *
+ * Buttons can be applied to any HTML element that is used to trigger a user
+ * action (e.g. following a call to action link, submitting a form).
+ *
+ * 01. Line differently sized buttons up a nicer.
+ * 02. Force all button components to use the pointer cursor.
+ * 03. Controls the height of the button.
+ * 04. Stop the browsers default focus outline.
+ * 99. Hook into Custom Contact Forms Plugin defaults.
+	 ========================================================================== */
+
+.ccf-submit-button, /* [99] */
+.c-btn {
+	display: inline-block;
+	position: relative;
+	padding: $button-padding;
+	min-width: 88px;
+	vertical-align: middle; /* [1] */
+	font-size: 1rem;
+	line-height: 2; /* [3] */
+	text-decoration: none;
+	text-align: center;
+	background-color: $button-background-color;
+	border-color: $button-border-color;
+	border-radius: $button-border-radius;
+	border-style: $button-border-style;
+	border-width: $button-border-width;
+	color: $button-text-color;
+	cursor: pointer;
+	transition-duration: 0.3s;
+	transition-property: background-color, border-color;
+	transition-timing-function: ease-in-out;
+
+	&:link,
+	&:visited {
+		color: $button-text-color;
+	}
+
+	&:hover,
+	&:focus {
+		background-color: $button-focus-background-color;
+		border-color: $button-focus-border-color;
+		color: $button-focus-text-color;
+		text-decoration: none;
+		outline: none; /* [4] */
+	}
+
+	&:active {
+		background-color: $button-active-background-color;
+		border-color: $button-active-border-color;
+		color: $button-active-text-color;
+		text-decoration: none;
+	}
+}
+
+/* Action variants
+	 ========================================================================== */
+
+.ccf-submit-button, /* [99] */
+.c-btn--primary {
+	background-color: $button-primary-background-color;
+	border-color: $button-primary-border-color;
+	color: $button-primary-text-color;
+
+	&:link,
+	&:visited {
+		color: $button-primary-text-color;
+	}
+
+	&:hover,
+	&:focus {
+		background-color: $button-primary-focus-background-color;
+		border-color: $button-primary-focus-border-color;
+		color: $button-primary-focus-text-color;
+	}
+
+	&:active {
+		background-color: $button-primary-active-background-color;
+		border-color: $button-primary-active-border-color;
+		color: $button-primary-active-text-color;
+	}
+}
+
+.c-btn--secondary {
+	background-color: $button-secondary-background-color;
+	border-color: $button-secondary-border-color;
+	color: $button-secondary-text-color;
+
+	&:link,
+	&:visited {
+		color: $button-secondary-text-color;
+	}
+
+	&:hover,
+	&:focus {
+		background-color: $button-secondary-focus-background-color;
+		border-color: $button-secondary-focus-border-color;
+		color: $button-secondary-focus-text-color;
+	}
+
+	&:active {
+		background-color: $button-secondary-active-background-color;
+		border-color: $button-secondary-active-border-color;
+		color: $button-secondary-active-text-color;
+	}
+}
+
+.c-btn--danger {
+	background-color: $button-danger-background-color;
+	border-color: $button-danger-border-color;
+	color: $button-danger-text-color;
+
+	&:link,
+	&:visited {
+		color: $button-danger-text-color;
+	}
+
+	&:hover,
+	&:focus {
+		background-color: $button-danger-focus-background-color;
+		border-color: $button-danger-focus-border-color;
+		color: $button-danger-focus-text-color;
+	}
+
+	&:active {
+		background-color: $button-danger-active-background-color;
+		border-color: $button-danger-active-border-color;
+		color: $button-danger-active-text-color;
+	}
+}
+
+/* Style variants
+	 ========================================================================== */
+
+/* Size variants
+	 ========================================================================== */
+
+.c-btn--large {
+	min-width: 8.875rem;
+	font-size: 1.25rem;
+}
+
+.c-btn--full {
+	width: 100%;
+	border-width: 0;
+}

@@ -1,0 +1,129 @@
+/* ==========================================================================
+	 /Settings #Color Variables
+	 ========================================================================== */
+
+/* Brand Colors
+	 ========================================================================== */
+
+$color-white:                     hsl(0, 0%, 100%);
+
+$color-neutral-10:                hsl(40, 7%, 10%);
+$color-neutral-25:                hsl(40, 7%, 25%);
+$color-neutral-50:                hsl(40, 7%, 42%);
+$color-neutral-75:                hsl(40, 7%, 67%);
+$color-neutral-90:                hsl(40, 7%, 92%);
+$color-neutral:                   $color-neutral-50;
+
+$color-black:                     hsl(0, 6%, 17%);
+
+$color-red-10:                    hsl(358, 71%, 10%);
+$color-red-25:                    hsl(358, 71%, 25%);
+$color-red-50:                    hsl(358, 71%, 40%);
+$color-red-75:                    hsl(358, 71%, 65%);
+$color-red-90:                    hsl(358, 71%, 90%);
+$color-red:                       $color-red-50;
+
+$color-blue-10:                   hsl(202, 86%, 10%);
+$color-blue-25:                   hsl(202, 86%, 26%);
+$color-blue-50:                   hsl(202, 86%, 51%);
+$color-blue-75:                   hsl(202, 86%, 75%);
+$color-blue-90:                   hsl(202, 86%, 90%);
+$color-blue:                      $color-blue-25;
+
+/* Interactive Colors
+	 ========================================================================== */
+
+$color-active:                    $color-blue;
+$color-focus:                     $color-blue-10;
+$color-hover:                     $color-blue-10;
+
+/* Alert Colors
+	 ========================================================================== */
+
+$color-alert-success:             hsl(88, 45%, 45%);
+$color-alert-success-light:       hsl(88, 100%, 75%);
+$color-alert-success-dark:        hsl(88, 46%, 14%);
+$color-alert-info:                $color-blue-50;
+$color-alert-warning:             hsl(18, 99%, 50%);
+$color-alert-danger:              hsl(0, 81%, 44%);
+$color-alert-danger-light:        hsl(0, 64%, 91%);
+$color-alert-danger-dark:         hsl(0, 81%, 44%);
+
+/* Text Colors
+	 ========================================================================== */
+
+$color-text:                      $color-black;
+$color-text-on-light:             $color-black;
+$color-text-on-dark:              $color-white;
+$color-text-light:                $color-white;
+$color-text-disabled:             $color-black;
+
+$color-link:                      $color-blue;
+$color-link-on-dark:              $color-white;
+$color-link-visited:              $color-blue;
+$color-link-hover:                $color-blue-50;
+
+$color-text-screen:               $color-blue;
+$color-text-input:                $color-neutral-50;
+$color-text-input-focus:          $color-text;
+
+/* Heading Colors
+	 ========================================================================== */
+
+$heading-page-color:                             $color-black;
+$heading-page-sub-color:                         $color-black;
+$heading-main-color:                             $color-black;
+
+/* Background Colors
+	 ========================================================================== */
+
+$color-background:                $color-white;
+$color-background-light:          $color-neutral;
+$color-background-dark:           rgb(1, 25, 33);
+$color-background-disabled:       $color-neutral-10;
+
+$color-background-screen:         $color-white;
+$color-background-hr:             $color-neutral-25;
+$color-background-pre:            rgb(238, 238, 238);
+$color-background-ins:            rgb(255, 249, 192);
+
+/* Border Colors
+	 ========================================================================== */
+
+$color-border-button:             $color-neutral-25 $color-neutral-25 rgb(187, 187, 187);
+$color-border-button-hover:       $color-neutral-25 rgb(187, 187, 187) rgb(170, 170, 170);
+$color-border-button-focus:       rgb(170, 170, 170) rgb(187, 187, 187) rgb(187, 187, 187);
+$color-border-input:              $color-neutral-25;
+$color-border-abbr:               $color-neutral-50;
+
+$color-table-background:          $color-neutral-10;
+$color-table-background-hover:    $color-blue;
+
+/* Form Colors
+	 ========================================================================== */
+
+$field-text-color:                              $color-text-input;
+$field-text-color-hover:                        $color-text;
+$field-text-color-focus:                        $color-link-hover;
+$field-text-color-placeholder:                  $color-neutral-75;
+
+$field-border-color:                            $color-neutral-75;
+$field-border-hover-color:                      $color-link-hover;
+$field-border-focus-color:                      $color-link-hover;
+
+$field-note-color:                              $color-neutral;
+
+/* Button Colors
+	 ========================================================================== */
+
+$button-primary-border-color:               $color-active;
+$button-primary-background-color:           $color-active;
+$button-primary-text-color:                 $color-text-light;
+
+$button-primary-focus-border-color:         $color-link-hover;
+$button-primary-focus-background-color:     $color-link-hover;
+$button-primary-focus-text-color:           $color-text-light;
+
+$button-primary-active-border-color:        $color-focus;
+$button-primary-active-background-color:    $color-focus;
+$button-primary-active-text-color:          $color-text-light;

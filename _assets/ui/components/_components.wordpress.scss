@@ -1,0 +1,41 @@
+.sticky {
+	display: block;
+}
+
+.byline,
+.updated:not( .published ) {
+	display: none;
+}
+
+.single .byline,
+.group-blog .byline {
+	display: inline;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 0;
+}
+
+.page-links {
+	margin: 0 0 1.5em;
+	clear: both;
+}
+
+.comment-content a {
+	word-wrap: break-word;
+}
+
+.bypostauthor {
+	display: block;
+}
+
+.widget {
+	margin: 0 0 1.5em;
+
+	/* Make sure select elements fit in widgets. */
+	select {
+		max-width: 100%;
+	}
+}

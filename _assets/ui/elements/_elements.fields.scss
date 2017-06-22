@@ -1,0 +1,37 @@
+/* ==========================================================================
+	 Element #Field
+
+	 @package     @TODO
+	 @subpackage	Element\Field
+	 @version			1.0.0
+	 @author			Thoughts & Ideas <hello@thoughtsideas.uk>
+	 @url					https://www.thoughtsideas.uk/
+	 @copyright		Copyright (c) 2017 Thoughts & Ideas
+	 @license			https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
+	 @link				@TODO
+	 ========================================================================== */
+
+/* Field Settings
+	 ========================================================================== */
+
+$field-label-font-family:                inherit !default;
+$field-label-weight:                     inherit !default;
+
+/* Field Defaults
+	 ========================================================================== */
+
+input,
+optgroup,
+select,
+textarea {
+	font-size: 1rem;
+	line-height: 1.5;
+}
+
+/* Label
+	 ========================================================================== */
+
+label {
+	font-family: $field-label-font-family;
+	font-weight: $field-label-weight;
+}

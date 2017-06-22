@@ -1,0 +1,33 @@
+/**
+ * Media Queries
+ */
+
+@mixin for-small-screen-only {
+	@media ( max-width: 599px ) {
+		@content;
+	}
+}
+
+@mixin for-medium-portrait-up {
+	@media ( min-width: 600px ) {
+		@content;
+	}
+}
+
+@mixin for-medium-landscape-up {
+	@media ( min-width: 900px ) {
+		@content;
+	}
+}
+
+@mixin for-large-up {
+	@media ( min-width: 1200px ) {
+		@content;
+	}
+}
+
+@mixin for-super-up {
+	@media ( min-width: 1800px ) {
+		@content;
+	}
+}

@@ -1,0 +1,13 @@
+/**
+ * The list-inline object displays any list of items as a single line.
+ */
+
+/* [ul|ol] */.o-list-inline {
+	margin-left: 0;
+	padding-left: 0;
+	list-style: none;
+}
+
+/* li */.o-list-inline__item {
+	display: inline-block;
+}

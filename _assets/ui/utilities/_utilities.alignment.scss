@@ -1,0 +1,68 @@
+/**
+ * Utilities – Alignment
+ * @package tiui
+ */
+
+.alignleft,
+.u-align-left {
+	display: inline;
+	margin-right: 1.5em;
+	float: left;
+}
+
+.alignright,
+.u-align-right {
+	display: inline;
+	margin-left: 1.5em;
+	float: right;
+}
+
+.aligncenter,
+.u-align-center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	clear: both;
+}
+
+/**
+ * Text Alignment.
+ */
+
+.u-text-left {
+	text-align: left;
+}
+
+.text-center,
+.u-text-center {
+	text-align: center;
+}
+
+.u-text-right {
+	text-align: right;
+}
+
+.u-text-justify {
+	text-align: justify;
+}
+
+/**
+ * Utility classes to vertically align an element centrally within its parent.
+ *
+ * This class requires a set height on the parent element to function correctly.
+ */
+.u-vertical-align-center {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+/**
+ * Using .u-vertical-align-center on an element can cause visual issues
+ * if it renders on a half pixel so we can apply preserve-3d to prevent
+ * this on the parent element.
+ */
+.u-vertical-align-parent {
+	/*! autoprefixer: off */
+	transform-style: preserve-3d;
+}

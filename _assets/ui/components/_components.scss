@@ -1,0 +1,31 @@
+/**
+ * Components.
+ *
+ * These are specific pieces of user interface. Each can be modified with
+ * no side effects to other components. Components should be namespaced `c-`
+ * and will rarely reference any specific HTML element.
+ */
+
+@import 'components.branding';
+
+@import 'components.headings';
+
+@import 'components.navigation';
+
+@import 'components.list';
+
+@import 'components.fields';
+
+@import 'component.button';
+
+@import 'components.media';
+
+@import 'components.alerts';
+
+@import 'component.entry';
+
+@import 'components.header';
+
+@import 'components.footer';
+
+@import 'components.wordpress';

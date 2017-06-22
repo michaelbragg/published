@@ -1,0 +1,38 @@
+/* ==========================================================================
+	 # Components /Alerts
+
+		 Offer a visual indication on responses the user needs to be informed
+		 of or take. These are usually paired with the card object/component.
+		 Most oftern the alert card.
+
+		 These are often catergoriesd as follows:
+
+	 - Success: The action taken was successful.
+	 - Info: Users attention is needed, but it's not super important. Accompanied
+		 with a dismiss option.
+	 - Warning: Requires the users attention, they might not want .
+	 - Danger: Urgently requires the users attention. Something dangerous will
+		 happen if they don't take action. Will usually include confirm and stop
+		 options.
+	 ========================================================================== */
+
+$alert-danger-border-color:                      $color-alert-danger !default;
+
+
+/**
+ * 1. Apply styling to Contact Form 7 default classes.
+ */
+
+.wpcf7-mail-sent-ok, /* [1] */
+.c-alert--sucess {
+	border-color: $color-alert-success;
+	background-color: $color-alert-success-light;
+	color: $color-alert-success-dark;
+}
+
+.wpcf7-validation-errors, /* [1] */
+.c-alert--warning {
+	border-color: $color-alert-danger;
+	background-color: $color-alert-danger-light;
+	color: $color-alert-danger-dark;
+}
