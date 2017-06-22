@@ -4,6 +4,12 @@ img {
 	vertical-align: middle;
 }
 
+/**
+ * 1. WordPress likes fixed widths on the caption shortcode. This breaks the
+ *    layout once the viewport width is small than the defined width.
+ *    We override this with an important until a better solution is available.
+ */
 figure {
 	margin: 0 0 2rem;
+	width: 100% !important; /* [1] */
 }
