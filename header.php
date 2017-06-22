@@ -24,6 +24,8 @@
 
 <body <?php body_class(); ?>>
 
+	<?php if ( function_exists( 'HM_GTM\tag' ) ) { HM_GTM\tag(); } ?>
+
 		<a class="skip-link screen-reader-text" href="#content">
 			<?php esc_html_e( 'Skip to content', 'ti_published' ); ?>
 		</a>
