@@ -1,0 +1,25 @@
+# MichaelBragg/Published
+
+# Images
+
+gui/*
+ui/*
+
+# JavaScript
+
+js/*
+
+# CSS
+
+style.css
+style.css.map
+
+# PHP
+
+/vendor
+composer.lock
+
+# NodeJS
+
+/node_modules
+/npm-debug.log
