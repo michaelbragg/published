@@ -17,16 +17,25 @@ An elegant minimal WordPress theme.
 
 ## Installation
 
-*We recommend installing this dependancy via Composer.*
+*We recommend installing this dependency via Composer.*
 
-### As a Composer Dependancy
+### As a Composer Dependency
 
-To include these standards as part of a project. Require this repository
-as a development dependancy:
+To include this theme as part of a project. Require this repository
+as a Composer dependency:
 
 ```
 composer require michaelbragg/published
 ```
+
+### Install via SFTP
+
+To add this Theme to your WordPress installation, follow these basic steps:
+
+1. Download the Theme archive and extract the files it contains. You may need to preserve the directory structure in the archive when extracting these files.
+1. Using an SFTP client to access your host web server, create a directory to save your Theme in the `/wp-content/themes` directory provided by WordPress. For example, This theme should be in `/wp-content/themes/published`.
+1. Upload the Theme files to the new directory on your host server.
+1. Activate the theme through your WordPress Administration Panel.
 
 ## Making Your Changes
 
