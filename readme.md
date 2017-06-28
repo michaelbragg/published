@@ -6,8 +6,8 @@ An elegant minimal WordPress theme.
 
 - [Readme](https://github.com/michaelbragg/published/blob/master/readme.md)
 - [Issues](https://github.com/michaelbragg/published/issues/)
-- [Continuous Integration](https://codeship.com/projects/xxxxx/)
-- [Production](https://www.michaelbragg.nested/)
+- [Automated Testing](https://travis-ci.org/michaelbragg/published)
+- [Production](https://www.michaelbragg.net/)
 
 ## Dependencies
 
