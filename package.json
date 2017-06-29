@@ -43,7 +43,7 @@
     "watch": "1.0.*"
   },
   "scripts": {
-    "build": "npm-run-all --parallel styles images",
+    "build": "npm-run-all -s styles images",
     "build:watch": "npm-run-all --parallel styles:watch",
     "styles": "npm run sass && npm run postcss",
     "styles:watch": "watch 'npm run styles -- --source-map' ./_assets/ui/",
@@ -54,7 +54,7 @@
     "svg": "npm-run-all --parallel svg:icons svg:logos",
     "svg:watch": "watch 'npm run svg ./_assets/ui/'",
     "svg:icons": "svgstore -o ./ui/icons.svg -p icon- ./_assets/gui/svg-icons/*.svg --inline",
-    "svg:logos": "svgstore -o ./ui/logos.svg -p logo- ./_assets/gui/svg-icons/*.svg --inline",
+    "svg:logos": "svgstore -o ./ui/logos.svg -p logo- ./_assets/gui/svg-logos/*.svg --inline",
     "test": "npm run stylelint",
     "stylelint": "stylelint ./_assets/ui/**/*.scss --syntax scss"
   },
