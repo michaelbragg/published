@@ -32,15 +32,15 @@ $navigation-heading-font-family:                 sans !default;
 	text-transform: uppercase;
 }
 
+.c-navigation-site__item {
+	position: relative; /* [1] */
+	line-height: 4.8; /* [2] */
+}
+
 @include for-medium-portrait-up {
 	.c-navigation-site__item {
 		font-size: $font-size-medium;
-		line-height: 1;
 	}
-}
-
-.c-navigation-site__item {
-	position: relative; /* [1] */
 }
 
 .c-navigation-site__item a {
@@ -50,12 +50,6 @@ $navigation-heading-font-family:                 sans !default;
 	height: 100%;
 	color: $color-neutral-25;
 	text-decoration: none;
-}
-
-@include for-small-screen-only {
-	.c-navigation-site__item a {
-		line-height: 4.8; /* [2] */
-	}
 }
 
 .c-navigation-site__item a:hover,
