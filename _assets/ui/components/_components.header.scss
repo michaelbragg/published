@@ -16,9 +16,10 @@
 
 /* Site Wide Header Layout
  *
- * 1. Stops the WordPress admin bar overlaying our header component.
- * 2. Apply border to parent element, allowing border to be full viewport width.
- * 3. Remove header margin if our page has an featured image.
+ *  1. Stops the WordPress admin bar overlaying our header component.
+ *  2. Apply border to parent element, allowing border to be full viewport width.
+ *  3. Remove header margin if our page has an featured image.
+ * 99. Use Microsofts fallback to fix layout in IE10–Edge.
 	 ========================================================================== */
 
 .c-header-site__parent {
@@ -30,25 +31,30 @@
 	margin-bottom: 0; /* [3] */
 }
 
-.c-header-site {
-	display: grid;
-	grid-template-columns:
-		[bleed-start] 0
-		[full-start] 1fr
-		[full-end] 0
-		[bleed-end];
-	grid-column-gap: 0.5rem;
+@supports ( grid-template-columns: [test] 1fr ) {
+
+	.c-header-site {
+		display: grid;
+		grid-template-columns:
+			[bleed-start] 0
+			[full-start] 1fr
+			[full-end] 0
+			[bleed-end];
+		grid-column-gap: 0.5rem;
+	}
 }
 
 @include for-medium-portrait-up {
-	.c-header-site {
-		grid-template-columns:
-			[bleed-start] 0
-			[full-start] minmax(min-content, 33fr)
-			[aside] 66fr
-			[full-end] 0
-			[bleed-end];
-		grid-column-gap: 1rem;
+	@supports ( grid-template-columns: [test] 1fr ) {
+		.c-header-site {
+			grid-template-columns:
+				[bleed-start] 0
+				[full-start] minmax(min-content, 33fr)
+				[aside] 66fr
+				[full-end] 0
+				[bleed-end];
+			grid-column-gap: 1rem;
+		}
 	}
 }
 
@@ -65,17 +71,24 @@
 /**
  * Brand (logo) holder
  */
-
 .c-header-site__brand {
-	grid-column-start: full;
-	grid-column-end: full;
 	max-height: 2.6667rem;
 }
 
-@include for-medium-portrait-up {
+@supports ( grid-template-columns: [test] 1fr ) {
+
 	.c-header-site__brand {
 		grid-column-start: full;
-		grid-column-end: aside;
+		grid-column-end: full;
+	}
+}
+
+@supports ( grid-template-columns: [test] 1fr ) {
+	@include for-medium-portrait-up {
+		.c-header-site__brand {
+			grid-column-start: full;
+			grid-column-end: aside;
+		}
 	}
 }
 
@@ -83,14 +96,19 @@
  * Navigation holder
  */
 
-.c-header-site__navigation {
-	grid-column-start: bleed;
-	grid-column-end: bleed;
+@supports ( grid-template-columns: [test] 1fr ) {
+	.c-header-site__navigation {
+		grid-column-start: bleed;
+		grid-column-end: bleed;
+	}
 }
 
-@include for-medium-portrait-up {
-	.c-header-site__navigation {
-		grid-column-start: aside;
-		grid-column-end: full;
+@supports ( grid-template-columns: [test] 1fr ) {
+
+	@include for-medium-portrait-up {
+		.c-header-site__navigation {
+			grid-column-start: aside;
+			grid-column-end: full;
+		}
 	}
 }

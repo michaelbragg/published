@@ -24,6 +24,7 @@ $footer-site-background-color:                  hsl(0, 7%, 92%) !default;
 
 .c-footer-site {
 	display: grid;
+	-ms-grid-template-columns: 0 1fr 0;
 	grid-template-columns:
 		[bleed-start] 0
 		[full-start] 1fr
@@ -38,6 +39,7 @@ $footer-site-background-color:                  hsl(0, 7%, 92%) !default;
 
 @include for-medium-portrait-up {
 	.c-footer-site {
+		-ms-grid-template-columns: 0 66fr 33fr 0;
 		grid-template-columns:
 			[bleed-start] 0
 			[full-start] 66fr
@@ -49,6 +51,8 @@ $footer-site-background-color:                  hsl(0, 7%, 92%) !default;
 }
 
 .c-footer-site__navigation {
+	-ms-grid-column: 1; /* [99] */
+	-ms-grid-column-span: 3; /* [99] */
 	grid-column-start: full;
 	grid-column-end: full;
 }
@@ -61,14 +65,18 @@ $footer-site-background-color:                  hsl(0, 7%, 92%) !default;
 }
 
 .c-footer-site__social-media {
+	-ms-grid-column: 1; /* [99] */
+	-ms-grid-column-span: 3; /* [99] */
 	grid-column-start: full;
 	grid-column-end: full;
 }
 
 @include for-medium-portrait-up {
 	.c-footer-site__social-media {
-		grid-column-start: aside;
-		grid-column-end: full;
+		-ms-grid-column: 3; /* [99] */
+		-ms-grid-column-span: 2; /* [99] */
+		grid-column-start: 3;
+		grid-column-end: 1;
 	}
 }
 

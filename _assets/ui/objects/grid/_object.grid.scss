@@ -12,53 +12,64 @@
 	 ========================================================================== */
 
 /* Content Grid
+ *
+ * 99. Use Microsofts fallback to fix layout in IE10–Edge.
 	 ========================================================================== */
 
-.o-content {
-	margin: 0 auto;
-	display: grid;
-	grid-column-gap: 0.5rem;
-	grid-template-columns:
-		[bleed-start] 0
-		[main-start] 1fr
-		[main-end] 0
-		[bleed-end];
-}
-
-@include for-medium-portrait-up {
+@supports ( grid-template-columns: [test] 1fr ) {
 	.o-content {
 		margin: 0 auto;
 		display: grid;
-		grid-column-gap: 1rem;
+		grid-column-gap: 0.5rem;
 		grid-template-columns:
 			[bleed-start] 0
-			[full-start] 8.9499fr
-			[main-start] 64.0629fr
-			[main-end] 26.8749fr
-			[full-end] 0
+			[main-start] 1fr
+			[main-end] 0
 			[bleed-end];
 	}
 }
 
-@include for-large-up {
-	.o-content {
-		margin: 0 auto;
-		display: grid;
-		grid-column-gap: 1rem;
-		grid-template-columns:
-			[bleed-start] 0
-			[full-start] 10fr
-			[main-start] 19.9898fr
-			[secondary] 19.9898fr
-			[main-end] 49.9797fr
-			[full-end] 0
-			[bleed-end];
+@supports ( grid-template-columns: [test] 1fr ) {
+	@include for-medium-portrait-up {
+		.o-content {
+			margin: 0 auto;
+			display: grid;
+			grid-column-gap: 1rem;
+			grid-template-columns:
+				[bleed-start] 0
+				[full-start] 8.9499fr
+				[main-start] 64.0629fr
+				[main-end] 26.8749fr
+				[full-end] 0
+				[bleed-end];
+		}
 	}
 }
 
-.o-content > * {
-	grid-column-start: main;
-	grid-column-end: main;
+@supports ( grid-template-columns: [test] 1fr ) {
+
+	@include for-large-up {
+		.o-content {
+			margin: 0 auto;
+			display: grid;
+			grid-column-gap: 1rem;
+			grid-template-columns:
+				[bleed-start] 0
+				[full-start] 10fr
+				[main-start] 19.9898fr
+				[secondary] 19.9898fr
+				[main-end] 49.9797fr
+				[full-end] 0
+				[bleed-end];
+		}
+	}
+}
+
+@supports ( grid-template-columns: [test] 1fr ) {
+	.o-content > * {
+		grid-column-start: main;
+		grid-column-end: main;
+	}
 }
 
 /**
