@@ -1,0 +1,64 @@
+{
+  "name": "michaelbragg",
+  "version": "0.1.0",
+  "license": "proprietary",
+  "private": true,
+  "description": "",
+  "keywords": [],
+  "homepage": "https://www.michaelbragg.net/",
+  "repository": "https://github.com/michaelbragg/published/",
+  "readme": "https://github.com/michaelbragg/published/blob/master/readme.md",
+  "bugs": "https://github.com/michaelbragg/published/issues/",
+  "author": "Michael Bragg <michael@michaelbragg.net>",
+  "contributors": [],
+  "main": "gruntfile.js",
+  "engines": {
+    "node": "6.11.*"
+  },
+  "browserslist": [
+    "> 5%",
+    "last 2 versions",
+    "not ie 10"
+  ],
+  "dependencies": {
+    "normalize.css": "7.0.*"
+  },
+  "devDependencies": {
+    "autoprefixer": "6.4.x",
+    "cssnano": "3.7.x",
+    "grunt-svgmin": "3.1.x",
+    "grunt-svgstore": "1.0.x",
+    "imagemin-cli": "3.0.*",
+    "node-sass": "4.5.*",
+    "npm-run-all": "^4.0.2",
+    "postcss": "6.0.*",
+    "postcss-cli": "4.1.*",
+    "postcss-cssstats": "1.0.x",
+    "postcss-sorting": "1.6.x",
+    "stylefmt": "5.0.*",
+    "stylelint": "7.10.*",
+    "stylelint-no-unsupported-browser-features": "1.0.*",
+    "stylelint-scss": "1.4.*",
+    "svgstore-cli": "1.3.*",
+    "watch": "1.0.*"
+  },
+  "scripts": {
+    "build": "npm-run-all --parallel styles images",
+    "build:watch": "npm-run-all --parallel styles:watch",
+    "styles": "npm run sass && npm run postcss",
+    "styles:watch": "watch 'npm run styles -- --source-map' ./_assets/ui/",
+    "sass": "node-sass ./_assets/ui/style.scss style.css --indent-type tab",
+    "postcss": "postcss style.css --output style.css --use autoprefixer cssnano",
+    "images": "npm run raster-images && npm run svg",
+    "raster-images": "imagemin ./_assets/ui/**/*.{png,jpg,gif} --out-dir ./ui",
+    "svg": "npm-run-all --parallel svg:icons svg:logos",
+    "svg:watch": "watch 'npm run svg ./_assets/ui/'",
+    "svg:icons": "svgstore -o ./ui/icons.svg -p icon- ./_assets/gui/svg-icons/*.svg --inline",
+    "svg:logos": "svgstore -o ./ui/logos.svg -p logo- ./_assets/gui/svg-icons/*.svg --inline",
+    "test": "npm run stylelint",
+    "stylelint": "stylelint ./_assets/ui/**/*.scss --syntax scss"
+  },
+  "stylelint": {
+    "extends": "./_tests/stylelint.config.js"
+  }
+}
