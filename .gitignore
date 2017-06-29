@@ -4,6 +4,7 @@
 
 gui/*
 ui/*
+!ui/index.php
 
 # JavaScript
 
