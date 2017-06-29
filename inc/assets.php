@@ -127,22 +127,26 @@ function ti_include_svg_icons() {
 	/**
 	 * Define SVG sprite file.
 	 */
-	$svg_icons = get_template_directory() . '/gui/icons.svg';
+	$svg_icons = get_template_directory() . '/ui/icons.svg';
 	/**
 	 * If it exists, include it.
 	 */
 	if ( file_exists( $svg_icons ) ) {
-		include_once $svg_icons;
+		echo '<div style="height: 0; width: 0; position: absolute; visibility: hidden;">';
+				include_once $svg_icons;
+		echo '</div>';
 	}
 	/**
 	 * Define SVG sprite file.
 	 */
-	$svg_logos = get_template_directory() . '/gui/logos.svg';
+	$svg_logos = get_template_directory() . '/ui/logos.svg';
 	/**
 	 * If it exists, include it.
 	 */
 	if ( file_exists( $svg_logos ) ) {
+		echo '<div style="height: 0; width: 0; position: absolute; visibility: hidden;">';
 		include_once $svg_logos;
+		echo '</div>';
 	}
 }
 
