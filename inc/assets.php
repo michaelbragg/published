@@ -132,7 +132,7 @@ function ti_include_svg_icons() {
 	 * If it exists, include it.
 	 */
 	if ( file_exists( $svg_icons ) ) {
-		echo '<div style="height: 0; width: 0; position: absolute; visibility: hidden;">';
+		echo '<div style="height: 0; width: 0; position: absolute; bottom: 0; visibility: hidden;">';
 				include_once $svg_icons;
 		echo '</div>';
 	}
@@ -144,7 +144,7 @@ function ti_include_svg_icons() {
 	 * If it exists, include it.
 	 */
 	if ( file_exists( $svg_logos ) ) {
-		echo '<div style="height: 0; width: 0; position: absolute; visibility: hidden;">';
+		echo '<div style="height: 0; width: 0; position: absolute; bottom: 0; visibility: hidden;">';
 		include_once $svg_logos;
 		echo '</div>';
 	}
