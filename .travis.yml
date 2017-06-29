@@ -1,5 +1,6 @@
 sudo: false
-language: php
+language:
+  - php
 
 notifications:
   on_success: never
@@ -21,9 +22,10 @@ cache:
     - $HOME/.composer/cache
 
 before_script:
-  # Install composer packages before trying to activate themes or plugins
   - composer install
+  - npm install
 
 script:
   - composer run test-phpcs
   - composer run test-phpmd
+  - npm run build
