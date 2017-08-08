@@ -11,6 +11,7 @@
 - [ ] Chrome
 - [ ] Edge
 - [ ] Firefox
+- [ ] IE Edge
 - [ ] IE11
 - [ ] IE Mobile
 - [ ] Opera
