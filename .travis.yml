@@ -26,6 +26,7 @@ matrix:
     - php: nightly
 
 before_install:
+  - phpenv config-rm xdebug.ini
   - nvm install 6.11
 
 before_script:
