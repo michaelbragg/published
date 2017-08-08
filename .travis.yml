@@ -6,7 +6,10 @@ notifications:
 
 # Cache Composer's caches to speed up build times.
 cache:
+  apt: true
   directories:
+    - node_modules
+    - vendor
     - $HOME/.composer/cache
 
 language:
