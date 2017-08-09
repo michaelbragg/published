@@ -27,8 +27,13 @@
 			</header>
 		<?php endif; ?>
 
-		<?php /* Start the Loop */ ?>
-		<?php while ( have_posts() ) : the_post(); ?>
+		<?php
+		/**
+		 * Start the Loop.
+		 */
+		?>
+		<?php while ( have_posts() ) : ?>
+			<?php the_post(); ?>
 
 			<?php get_template_part( 'module-templates/content', get_post_format() ); ?>
 

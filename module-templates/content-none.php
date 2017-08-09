@@ -24,10 +24,12 @@
 	</header>
 
 	<?php
-	if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
+	if ( is_home() && current_user_can( 'publish_posts' ) ) :
+	?>
 
 		<p>
-		<?php printf(
+		<?php
+		printf(
 			wp_kses(
 				/* translators: the edit post url */
 				__(
@@ -41,16 +43,19 @@
 				)
 			),
 			esc_url( admin_url( 'post-new.php' ) )
-		); ?>
+		);
+		?>
 		</p>
 
 		<?php elseif ( is_search() ) : ?>
 
 			<p>
-				<?php esc_html_e(
+				<?php
+				esc_html_e(
 					'Sorry, but nothing matched your search terms. Please try again with some different keywords.',
 					'ti_published'
-				); ?>
+				);
+				?>
 			</p>
 
 			<footer class="c-entry--footer">
@@ -60,10 +65,12 @@
 		<?php else : ?>
 
 			<p>
-				<?php esc_html_e(
+				<?php
+				esc_html_e(
 					'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.',
 					'ti_published'
-				); ?>
+				);
+				?>
 			</p>
 
 			<footer class="c-entry--footer">

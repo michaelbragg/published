@@ -19,7 +19,8 @@
 
 			<div class="c-footer-site__navigation c-navigation-footer">
 
-				<?php wp_nav_menu(
+				<?php
+				wp_nav_menu(
 					array(
 						'menu'           => 'navigation-footer-primary',
 						'menu_class'     => 'o-list-block c-navigation-footer',
@@ -28,23 +29,26 @@
 						'depth'          => 1,
 						'items_wrap'     => '<ul class="%2$s" id="%1$s">%3$s</ul>',
 					)
-				); ?>
+				);
+				?>
 
 				<p class="c-copyright"><?php the_copyright(); ?></p>
 
 			</div>
 
-	<?php wp_nav_menu(
+	<?php
+	wp_nav_menu(
 		array(
-				'menu'           => 'navigation-footer-secondary',
-				'menu_class'     => 'o-list-block c-footer-site__social-media',
-				'container'      => false,
-				'theme_location' => 'navigation-footer-secondary',
-				'fallback_cb'    => false,
-				'depth'          => 1,
-				'items_wrap'     => '<ul class="%2$s" id="%1$s">%3$s</ul>',
-			)
-	); ?>
+			'menu'           => 'navigation-footer-secondary',
+			'menu_class'     => 'o-list-block c-footer-site__social-media',
+			'container'      => false,
+			'theme_location' => 'navigation-footer-secondary',
+			'fallback_cb'    => false,
+			'depth'          => 1,
+			'items_wrap'     => '<ul class="%2$s" id="%1$s">%3$s</ul>',
+		)
+	);
+	?>
 
 		</div>
 

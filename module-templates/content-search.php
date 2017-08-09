@@ -18,13 +18,15 @@
 
 	<header class="c-entry--header o-content__pull--right">
 
-		<?php the_title(
+		<?php
+		the_title(
 			sprintf(
 				'<h2 class="c-heading--main"><a href="%s" rel="bookmark">',
 				esc_url( get_permalink() )
 			),
 			'</a></h2>'
-		); ?>
+		);
+		?>
 
 		<?php if ( 'post' === get_post_type() ) : ?>
 			<div class="c-entry--meta">

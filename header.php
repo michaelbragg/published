@@ -24,7 +24,11 @@
 
 <body <?php body_class(); ?>>
 
-	<?php if ( function_exists( 'HM_GTM\tag' ) ) { HM_GTM\tag(); } ?>
+	<?php
+	if ( function_exists( 'HM_GTM\tag' ) ) {
+		HM_GTM\tag();
+	}
+	?>
 
 		<a class="skip-link screen-reader-text" href="#content">
 			<?php esc_html_e( 'Skip to content', 'ti_published' ); ?>
@@ -36,13 +40,17 @@
 
 				<div class="c-header-site__brand">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-						<?php ti_the_svg( array(
-							'type'          => 'logo',
-							'name'          => 'michael-bragg',
-							'class'         => 'c-logo--masthead',
-							'title'         => 'Michael Bragg',
-							'description'   => ' – A designer who codes',
-						) ); ?>
+						<?php
+						ti_the_svg(
+							array(
+								'type'          => 'logo',
+								'name'          => 'michael-bragg',
+								'class'         => 'c-logo--masthead',
+								'title'         => 'Michael Bragg',
+								'description'   => ' – A designer who codes',
+							)
+						);
+						?>
 					</a>
 				</div>
 
@@ -52,14 +60,18 @@
 					id="site-navigation"
 				>
 
-					<?php wp_nav_menu( array(
-						'menu'           => 'navigation-site',
-						'menu_class'     => 'o-list-block o-list-block--full',
-						'container'      => false,
-						'theme_location' => 'navigation-site',
-						'depth'          => 1,
-						'items_wrap'     => '<ul class="%2$s" id="%1$s">%3$s</ul>',
-					) ); ?>
+					<?php
+					wp_nav_menu(
+						array(
+							'menu'           => 'navigation-site',
+							'menu_class'     => 'o-list-block o-list-block--full',
+							'container'      => false,
+							'theme_location' => 'navigation-site',
+							'depth'          => 1,
+							'items_wrap'     => '<ul class="%2$s" id="%1$s">%3$s</ul>',
+						)
+					);
+					?>
 
 				</nav>
 

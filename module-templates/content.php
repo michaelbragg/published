@@ -16,7 +16,7 @@
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'o-content' ); ?>>
 
-	<?php if ( is_singular() && has_post_thumbnail( ) ) : ?>
+	<?php if ( is_singular() && has_post_thumbnail() ) : ?>
 		<figure class="o-content__bleed">
 			<?php the_post_thumbnail(); ?>
 		</figure>
@@ -36,7 +36,8 @@
 		);
 	endif;
 
-	if ( 'post' === get_post_type() ) : ?>
+	if ( 'post' === get_post_type() ) :
+	?>
 		<div class="c-entry--meta">
 		<?php ti_posted_on(); ?>
 		</div>
@@ -54,9 +55,9 @@
 							/* translators: %s: Name of current post. */
 							__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'ti_published' ),
 							array(
-							'span' => array(
-								'class' => array(),
-							),
+								'span' => array(
+									'class' => array(),
+								),
 							)
 						),
 						the_title( '<span class="screen-reader-text">"', '"</span>', false )
@@ -65,8 +66,8 @@
 
 				wp_link_pages(
 					array(
-					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ti_published' ),
-					'after'  => '</div>',
+						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ti_published' ),
+						'after'  => '</div>',
 					)
 				);
 	?>
