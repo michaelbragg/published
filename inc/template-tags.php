@@ -209,9 +209,8 @@ add_action(
  */
 function change_archive_query_loop( $query ) {
 	if ( $query->is_main_query() && ! is_admin() ) {
-		$query->set( 'posts_per_page', '30' );
-		$query->set( 'order', 'ASC' );
-		$query->set( 'orderby', 'menu_order title' );
+		$query->set( 'order', 'DESC' );
+		$query->set( 'orderby', 'modified date' );
 	}
 }
 
