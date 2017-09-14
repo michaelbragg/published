@@ -23,25 +23,28 @@
   "repositories": [],
   "require": {},
   "require-dev": {
-    "thoughtsideas/ti-wpcs" : "1.1.0"
+    "thoughtsideas/ti-wpcs": "dev-develop"
   },
-  "autoload": {
-  },
+  "autoload": {},
   "scripts": {
     "config-ti-wpcs": [
-      "\"vendor/bin/phpcs\" --config-set default_standard TI-WPCS",
-      "\"vendor/bin/phpcs\" --config-set colors 1",
-      "\"vendor/bin/phpcs\" --config-set show_progress 1"
+      "\"vendor/bin/phpcs\" --config-set default_standard TI-WPCS"
     ],
     "post-install-cmd": "composer config-ti-wpcs",
     "post-update-cmd": "composer config-ti-wpcs",
     "test-phpcbf": "./vendor/bin/phpcbf ./ --standard=vendor/thoughtsideas/TI-WPCS/ti-wpcs/ruleset.xml",
     "test-phpcs": "./vendor/bin/phpcs ./ --standard=vendor/thoughtsideas/TI-WPCS/ti-wpcs/ruleset.xml",
     "test-phpmd": "./vendor/bin/phpmd ./ text ./vendor/thoughtsideas/ti-wpcs/TI-WPMD/ruleset.xml",
+    "test-phpcpd": "./vendor/bin/phpcpd ./ --regexps-exclude=#vendor/#,#node_modules/# --progress",
+    "test-phpsc": "./vendor/bin/security-checker security:check composer.lock",
+    "test-phpmnd": "./vendor/bin/phpmnd ./ --ignore-funcs=round,sleep --exclude=./vendor/ --progress",
     "test": [
       "composer run test-phpcbf",
       "composer run test-phpcs",
-      "composer run test-phpmd"
+      "composer run test-phpmd",
+      "composer run test-phpcpd",
+      "composer run test-phpsc",
+      "composer run test-phpmnd"
     ]
   }
 }
