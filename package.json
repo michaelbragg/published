@@ -44,17 +44,17 @@
     "build": "npm-run-all -s styles images",
     "build:watch": "npm-run-all --parallel styles:watch",
     "styles": "npm run sass && npm run postcss",
-    "styles:watch": "watch 'npm run styles -- --source-map' ./_assets/ui/",
-    "sass": "node-sass ./_assets/ui/style.scss style.css --indent-type tab",
+    "styles:watch": "watch 'npm run styles -- --source-map' ./assets/ui/",
+    "sass": "node-sass ./assets/ui/style.scss style.css --indent-type tab",
     "postcss": "postcss style.css --output style.css --use autoprefixer cssnano",
     "images": "npm run raster-images && npm run svg",
-    "raster-images": "imagemin ./_assets/ui/**/*.{png,jpg,gif} --out-dir ./ui",
+    "raster-images": "imagemin ./assets/ui/**/*.{png,jpg,gif} --out-dir ./ui",
     "svg": "npm-run-all --parallel svg:icons svg:logos",
-    "svg:watch": "watch 'npm run svg ./_assets/ui/'",
-    "svg:icons": "svgstore -o ./ui/icons.svg -p icon- ./_assets/gui/svg-icons/*.svg --inline",
-    "svg:logos": "svgstore -o ./ui/logos.svg -p logo- ./_assets/gui/svg-logos/*.svg --inline",
+    "svg:watch": "watch 'npm run svg ./assets/ui/'",
+    "svg:icons": "svgstore -o ./ui/icons.svg -p icon- ./assets/gui/svg-icons/*.svg --inline",
+    "svg:logos": "svgstore -o ./ui/logos.svg -p logo- ./assets/gui/svg-logos/*.svg --inline",
     "test": "npm run stylelint",
-    "stylelint": "stylelint ./_assets/ui/**/*.scss --syntax scss"
+    "stylelint": "stylelint ./assets/ui/**/*.scss --syntax scss"
   },
   "stylelint": {
     "extends": "./_tests/stylelint.config.js"
