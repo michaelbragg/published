@@ -1,0 +1,63 @@
+/* ==========================================================================
+	 Component #Byline
+
+	 @package     @TODO
+	 @subpackage	Component\Byline
+	 @extends			Element\Byline
+	 @version			1.0.0
+	 @author			Thoughts & Ideas <hello@thoughtsideas.uk>
+	 @url					https://www.thoughtsideas.uk/
+	 @copyright		Copyright (c) 2017 Thoughts & Ideas
+	 @license			https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
+	 @link				@TODO
+	 ========================================================================== */
+
+/* Byline settings
+	 ========================================================================== */
+
+/* Byline settings
+	 ========================================================================== */
+
+.c-byline {
+	font-family:
+		'Karmina Sans',
+		karmina-sans,
+		-apple-system,
+		blinkmacsystemfont,
+		'Segoe UI',
+		roboto,
+		helvetica,
+		arial,
+		sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+	letter-spacing: 0.01px;
+}
+
+.c-byline time,
+.c-byline a {
+	font-weight: 700;
+	color: #2f2a2a;
+}
+
+@media (min-width: 768px) {
+
+	.c-byline__item {
+		display: inline;
+	}
+
+	.c-byline__author:after {
+		margin-right: 0.66rem;
+		margin-left: 0.66rem;
+		content: '\00B7';
+	}
+
+	.c-byline__published {
+
+	}
+
+	.c-byline__updated {
+		display: block;
+	}
+
+}

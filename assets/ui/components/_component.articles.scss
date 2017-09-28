@@ -1,0 +1,103 @@
+
+.s-article {
+	margin-bottom: 5rem;
+}
+
+.s-article > header {
+	margin-bottom: 96px;
+	text-align: center;
+}
+
+.s-article > p + h2 {
+	margin-top: 36px;
+}
+
+.s-article > p + h3 {
+	margin-top: 24px;
+	margin-bottom: 12px;
+}
+
+.s-article > p {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.s-article > p + p,
+.s-article > .o-media--float-right + p,
+.s-article > .o-media--float-left + p {
+	text-indent: 2em;
+}
+
+.s-article > header + p:first-of-type,
+.s-article > figure + p:first-of-type {
+	font-size: 23px;
+	line-height: 30px;
+}
+
+.s-article > p + .o-media {
+	margin-top: 24px;
+	margin-bottom: 24px;
+}
+
+.s-article > .o-blockquote {
+	position: relative;
+	font-family:
+		'Karmina Sans',
+		karmina-sans,
+		-apple-system,
+		blinkmacsystemfont,
+		'Segoe UI',
+		roboto,
+		helvetica,
+		arial,
+		sans-serif;
+	font-size: 2.4em;
+	line-height: 1.5;
+	font-style: italic;
+}
+
+.s-article > .o-blockquote::before {
+	content: '\201C';
+	position: absolute;
+	top: 0.25em;
+	left: -0.15em;
+	color: #e7e6e4;
+	font-family:
+		'Karmina Sans',
+		karmina-sans,
+		-apple-system,
+		blinkmacsystemfont,
+		'Segoe UI',
+		roboto,
+		helvetica,
+		arial,
+		sans-serif;
+	font-size: 6em;
+	z-index: -1;
+}
+
+.s-article > p + .o-blockquote {
+	margin-top: 36px;
+	margin-bottom: 36px;
+}
+
+.s-article > ol,
+.s-article > ul {
+	padding-left: 0;
+	list-style-position: outside;
+}
+
+.s-article > .o-blockquote > p {
+	margin: 0;
+	margin-bottom: 0.5em;
+	font-size: 26px;
+	font-style: italic;
+	line-height: 1.1538461538;
+}
+
+.s-article > .o-blockquote footer,
+.s-article > .o-blockquote cite {
+	font-size: 16px;
+	font-style: normal;
+	line-height: 1.5;
+}

@@ -1,22 +1,46 @@
+/* ==========================================================================
+	 Element #Links
+
+	 @package     @TODO
+	 @subpackage	Element\Links
+	 @version			1.0.0
+	 @author			Thoughts & Ideas <hello@thoughtsideas.uk>
+	 @url					https://www.thoughtsideas.uk/
+	 @copyright		Copyright (c) 2017 Thoughts & Ideas
+	 @license			https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
+	 @link				@TODO
+	 ========================================================================== */
+
+/* Links Settings
+ *
+ * These settings should be overwritten in your setting/colour file.
+	 ========================================================================== */
+
+/**
+ * Links: Defaults
+ */
+
 a {
-	color: $color-link;
+	text-decoration: none;
+	transition: background 0.3s cubic-bezier(0.75, 0.02, 0.5, 1);
+}
 
-	&:visited {
-		color: $color-link-visited;
-	}
+a:link {
+	border-bottom: 1pt solid currentColor;
+	color: #af1e23;
+}
 
-	&:hover,
-	&:focus,
-	&:active {
-		color: $color-link-hover;
-	}
+a:visited {
+	color: #af1e23;
+}
 
-	&:focus {
-		outline: thin dotted;
-	}
+a:focus,
+a:hover {
+	background: #ffe3d9;
+}
 
-	&:hover,
-	&:active {
-		outline: 0;
-	}
+a:active {
+	border-bottom: 1pt solid #af1e23;
+	background: #af1e23;
+	color: #ffe3d9;
 }

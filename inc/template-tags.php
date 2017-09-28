@@ -12,6 +12,8 @@
  * @license    https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
  */
 
+
+
 if ( ! function_exists( 'ti_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time and author.
@@ -42,7 +44,7 @@ if ( ! function_exists( 'ti_posted_on' ) ) :
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
-		 echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+		echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
 
 	}
 endif;

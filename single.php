@@ -1,20 +1,35 @@
 <?php
 /**
- * Module: Content – Default
+ * Single
  *
- * Template part for displaying posts.
+ * The main template file. Required file for a theme.
  *
  * @package    ThoughtsIdeas\Published
- * @subpackage Module\Content\Default
+ * @subpackage Single
  * @version    1.0.0
  * @author     Thoughts & Ideas <hello@thoughtsideas.uk>
  * @copyright  Copyright (c) 2017 Thoughts & Ideas
- * @license    https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
  * @link       https://codex.wordpress.org/Template_Hierarchy
+ * @license    https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
  */
 
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'o-content' ); ?>>
+
+<?php get_header(); ?>
+
+<main role="main" id="content">
+
+	<?php if ( have_posts() ) : ?>
+
+		<?php
+		/**
+		 * Start the Loop.
+		 */
+		?>
+		<?php while ( have_posts() ) : ?>
+			<?php the_post(); ?>
+
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'o-content s-article' ); ?>>
 
 	<?php if ( is_singular() && has_post_thumbnail() ) : ?>
 		<figure class="o-content__bleed">
@@ -24,23 +39,29 @@
 
 	<header class="c-entry--header o-content__pull--right">
 
+		<?php /* @TODO Better formatting for muliple categories. */ ?>
+		<?php $categories = get_the_category(); ?>
+		<?php if ( $categories ) : ?>
+		<p class="c-heading--section">
+			<?php foreach( $categories as $category ) { ?>
+			<?php echo esc_html( $category->name ); ?>
+			<?php } ?>
+		</p>
+		<?php endif; ?>
+
 	<?php
-	if ( is_singular() ) :
-		the_title(
-			'<h1 class="c-heading--headline">',
-			'</h1>'
-		);
-	else :
-		the_title(
-			'<h2 class="c-heading--headline"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">',
-			'</a></h2>'
-		);
-	endif;
+	the_title(
+		'<h1 class="c-heading--headline">',
+		'</h1>'
+	);
 
 	if ( 'post' === get_post_type() ) :
 	?>
 		<div class="c-entry--meta">
-		<?php ti_posted_on(); ?>
+			<?php get_template_part(
+				'module-templates/single',
+				'byline'
+			); ?>
 		</div>
 	<?php endif; ?>
 
@@ -80,3 +101,17 @@
 	</footer>
 
 </article><!-- #post-<?php the_ID(); ?> -->
+
+		<?php endwhile; ?>
+
+		<?php the_posts_navigation(); ?>
+
+	<?php else : ?>
+
+		<?php get_template_part( 'module-templates/content', 'none' ); ?>
+
+	<?php endif; ?>
+
+</main>
+
+<?php get_footer(); ?>
