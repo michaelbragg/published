@@ -129,12 +129,19 @@ unset( $file, $filepath );
  */
 function ti_custom_nav_class( $classes, $items, $args ) {
 
-	$custom_classes = array(
-		'o-list-block__item',
-	);
+	$custom_classes = array();
 
 	if ( 'navigation-site' === $args->menu ) {
 		$custom_classes[] = 'c-navigation-site__item';
+		$custom_classes[] = 'o-list-block__item';
+	}
+
+	if ( 'navigation-footer-primary' === $args->menu ) {
+		$custom_classes[] = 'o-list-inline__item';
+	}
+
+	if ( 'navigation-footer-secondary' === $args->menu ) {
+		$custom_classes[] = 'o-list-inline_item';
 	}
 
 	return array_merge( $classes, $custom_classes );
