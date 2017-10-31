@@ -31,25 +31,35 @@ $heading-section-color:                             hsl(0, 0%, 20%) !default;
 
 .c-heading--headline {
 	margin-bottom: 36px;
-	font-size: 65px;
+	font-size: 4.0625rem;
 	line-height: 1.09375;
 }
 
 .c-heading--sub {
 	margin-bottom: 24px;
-	font-size: 44px;
+	font-size: 2.75rem;
 	line-height: 1.2;
 }
 
-.c-heading--tertiary {
-	font-size: 26px;
+.c-heading--,
+h3 {
+	font-size: 1.625rem;
 	line-height: 1.2307692308;
 }
 
 .c-heading--section {
 	margin-bottom: 11px;
-	font-family: 'Karmina Sans', karmina-sans, -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, helvetica, arial, sans-serif;
-	font-size: 14px;
+	font-family:
+		'Karmina Sans',
+		karmina-sans,
+		-apple-system,
+		blinkmacsystemfont,
+		'Segoe UI',
+		roboto,
+		helvetica,
+		arial,
+		sans-serif;
+	font-size: 0.875rem;
 	line-height: 1;
 	letter-spacing: 1px;
 	text-transform: uppercase;
@@ -67,7 +77,7 @@ $heading-section-color:                             hsl(0, 0%, 20%) !default;
 		helvetica,
 		arial,
 		sans-serif;
-	font-size: 16px;
+	font-size: 1rem;
 	line-height: 1.5;
 	letter-spacing: 0.01px;
 }

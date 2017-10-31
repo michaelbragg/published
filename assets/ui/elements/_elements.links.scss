@@ -24,23 +24,3 @@ a {
 	text-decoration: none;
 	transition: background 0.3s cubic-bezier(0.75, 0.02, 0.5, 1);
 }
-
-a:link {
-	border-bottom: 1pt solid currentColor;
-	color: #af1e23;
-}
-
-a:visited {
-	color: #af1e23;
-}
-
-a:focus,
-a:hover {
-	background: #ffe3d9;
-}
-
-a:active {
-	border-bottom: 1pt solid #af1e23;
-	background: #af1e23;
-	color: #ffe3d9;
-}

@@ -14,35 +14,38 @@
  */
 
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'o-content' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'o-content s-article' ); ?>>
 
-	<?php if ( is_singular() && has_post_thumbnail() ) : ?>
-		<figure class="o-content__bleed">
-			<?php the_post_thumbnail(); ?>
-		</figure>
-	<?php endif; ?>
+	<header>
+		<?php /* @TODO Better formatting for muliple categories. */ ?>
+		<?php $categories = get_the_category( get_the_ID() ); ?>
+		<?php if ( $categories ) : ?>
+		<p class="c-heading--section">
+			<?php foreach ( $categories as $category ) { ?>
+			<?php echo esc_html( $category->name ); ?>
+			<?php } ?>
+		</p>
+		<?php endif; ?>
 
-	<header class="c-entry--header o-content__pull--right">
+		<?php
+		if ( is_singular() ) :
+			the_title(
+				'<h1 class="c-heading--headline">',
+				'</h1>'
+			);
+			else :
+				the_title(
+					'<h2 class="c-heading--headline"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">',
+					'</a></h2>'
+				);
+			endif;
+			?>
 
-	<?php
-	if ( is_singular() ) :
-		the_title(
-			'<h1 class="c-heading--headline">',
-			'</h1>'
-		);
-	else :
-		the_title(
-			'<h2 class="c-heading--headline"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">',
-			'</a></h2>'
-		);
-	endif;
-
-	if ( 'post' === get_post_type() ) :
-	?>
-		<div class="c-entry--meta">
-		<?php ti_posted_on(); ?>
-		</div>
-	<?php endif; ?>
+			<?php if ( 'post' === get_post_type() ) : ?>
+				<div class="c-entry--meta">
+					<?php get_template_part( 'module-templates/entry', 'byline' ); ?>
+				</div>
+			<?php endif; ?>
 
 	</header>
 
@@ -76,7 +79,7 @@
 
 	<footer class="c-entry--footer">
 		<?php do_action( 'ti_published_entry_footer' ); ?>
-		<?php _s_entry_footer(); ?>
+		<?php get_template_part( 'module-templates/entry', 'footer' ); ?>
 	</footer>
 
 </article><!-- #post-<?php the_ID(); ?> -->

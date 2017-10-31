@@ -16,7 +16,7 @@
  * 99. Use Microsofts fallback to fix layout in IE10–Edge.
 	 ========================================================================== */
 
-@supports ( grid-template-columns: [test] 1fr ) {
+/*@supports ( grid-template-columns: [test] 1fr ) {
 	.o-content {
 		margin: 0 auto;
 		display: grid;
@@ -70,13 +70,13 @@
 		grid-column-start: main;
 		grid-column-end: main;
 	}
-}
+}*/
 
 /**
  * Bleed – Runs content to the edge of the viewport width.
  */
 
-.o-content__bleed {
+/*.o-content__bleed {
 	grid-column-start: bleed;
 	grid-column-end: bleed;
 }
@@ -113,5 +113,89 @@
 	.o-content__pull--left {
 		grid-column-start: full;
 		grid-column-end: main;
+	}
+}*/
+
+/* Non Grid Support Layout
+ *
+ * 1. Allow element to span full viewport width.
+   ========================================================================== */
+.o-content {
+	margin-right: auto;
+	margin-left: auto;
+	width: 85%;
+	max-width: 28.125rem;
+}
+
+@media screen and ( min-width: 64rem ) {
+
+	.o-content {
+		/** Acts as wrapper. */
+		margin-right: auto;
+		margin-left: auto;
+		padding-right: 12px;
+		padding-left: 12px;
+		width: auto; /* [1] */
+		max-width: 100%; /* [1] */
+	}
+
+	.o-content > :not( .o-content ) {
+		display: block;
+		position: relative;
+		margin-right: 33.3333%;
+		margin-left: 20%;
+		width: 45.4666%;
+	}
+
+	.o-content > .o-media {
+		margin-top: 0;
+		margin-right: 19.02834008097166%;
+		margin-bottom: 0;
+		margin-left: 15.654554655870445%;
+		padding: 12px;
+		width: 62.88795546558704%;
+	}
+
+	.o-content > .o-media--pull-right {
+		float: right;
+		padding: 12px;
+		margin-top: 0;
+		margin-right: 0;
+		margin-left: 0;
+		width: 33.3334%;
+		padding-right: 0;
+	}
+
+	.o-content > .pull--left {
+		float: left;
+		margin-top: 0;
+		margin-right: 0;
+		margin-left: 0;
+		padding: 12px;
+		padding-left: 0;
+		width: 20%;
+	}
+
+	.o-content > .o-media--float-right {
+		float: right;
+		margin: 0 19.02834008097166% 0 0;
+		padding: 12px;
+		width: 39.27125506072874%;
+	}
+
+	.o-content > .o-media--float-left {
+		float: left;
+		margin: 0 0 0 15.654554655870445%;
+		padding: 12px;
+		width: 22.402125506072874%;
+	}
+
+	.o-content > .o-media--bleed {
+		width: 100%;
+	}
+
+	.o-content > .o-media--bleed-left {
+		margin-left: 0;
+		width: 65.4667%;
 	}
 }

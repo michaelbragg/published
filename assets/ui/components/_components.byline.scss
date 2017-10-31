@@ -29,7 +29,7 @@
 		helvetica,
 		arial,
 		sans-serif;
-	font-size: 16px;
+	font-size: 1rem;
 	line-height: 1.5;
 	letter-spacing: 0.01px;
 }
@@ -40,20 +40,16 @@
 	color: #2f2a2a;
 }
 
-@media (min-width: 768px) {
+@media ( min-width: 768px ) {
 
 	.c-byline__item {
 		display: inline;
 	}
 
-	.c-byline__author:after {
+	.c-byline__author::after {
 		margin-right: 0.66rem;
 		margin-left: 0.66rem;
 		content: '\00B7';
-	}
-
-	.c-byline__published {
-
 	}
 
 	.c-byline__updated {

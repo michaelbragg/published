@@ -1,11 +1,11 @@
 <?php
 /**
- * Single
+ * Singular
  *
- * The main template file. Required file for a theme.
+ * Template file to display single pages and posts.
  *
  * @package    ThoughtsIdeas\Published
- * @subpackage Single
+ * @subpackage Singular\Default
  * @version    1.0.0
  * @author     Thoughts & Ideas <hello@thoughtsideas.uk>
  * @copyright  Copyright (c) 2017 Thoughts & Ideas
@@ -31,19 +31,13 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'o-content s-article' ); ?>>
 
-	<?php if ( is_singular() && has_post_thumbnail() ) : ?>
-		<figure class="o-content__bleed">
-			<?php the_post_thumbnail(); ?>
-		</figure>
-	<?php endif; ?>
-
-	<header class="c-entry--header o-content__pull--right">
+	<header class="c-entry--header">
 
 		<?php /* @TODO Better formatting for muliple categories. */ ?>
-		<?php $categories = get_the_category(); ?>
+		<?php $categories = get_the_category( get_the_ID() ); ?>
 		<?php if ( $categories ) : ?>
 		<p class="c-heading--section">
-			<?php foreach( $categories as $category ) { ?>
+			<?php foreach ( $categories as $category ) { ?>
 			<?php echo esc_html( $category->name ); ?>
 			<?php } ?>
 		</p>
@@ -58,10 +52,12 @@
 	if ( 'post' === get_post_type() ) :
 	?>
 		<div class="c-entry--meta">
-			<?php get_template_part(
-				'module-templates/single',
+			<?php
+			get_template_part(
+				'module-templates/entry',
 				'byline'
-			); ?>
+			);
+			?>
 		</div>
 	<?php endif; ?>
 
@@ -97,7 +93,7 @@
 
 	<footer class="c-entry--footer">
 		<?php do_action( 'ti_published_entry_footer' ); ?>
-		<?php _s_entry_footer(); ?>
+		<?php get_template_part( 'module-templates/entry', 'footer' ); ?>
 	</footer>
 
 </article><!-- #post-<?php the_ID(); ?> -->

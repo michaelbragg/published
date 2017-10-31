@@ -1,18 +1,76 @@
+/* ==========================================================================
+	 Component #Articles
+
+	 @package     @TODO
+	 @subpackage	Component\Articles
+	 @version			1.0.0
+	 @author			Thoughts & Ideas <hello@thoughtsideas.uk>
+	 @url					https://www.thoughtsideas.uk/
+	 @copyright		Copyright (c) 2017 Thoughts & Ideas
+	 @license			https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
+	 @link				@TODO
+	 ========================================================================== */
 
 .s-article {
 	margin-bottom: 5rem;
 }
 
+/* Article Links
+ *
+ * Applying link properties to the article scope stops interferance with links
+ * used in other areas of the site.
+   ========================================================================== */
+
+.s-article a:link {
+	border-bottom: 1pt solid currentColor;
+	color: #af1e23;
+}
+
+.s-article a:visited {
+	color: #af1e23;
+}
+
+.s-article a:focus,
+.s-article a:hover {
+	background: #ffe3d9;
+}
+
+.s-article a:active {
+	border-bottom: 1pt solid #af1e23;
+	background: #af1e23;
+	color: #ffe3d9;
+}
+
+/* Article Header
+   ========================================================================== */
 .s-article > header {
 	margin-bottom: 96px;
 	text-align: center;
 }
+
+.s-article .c-byline a:link,
+.s-article .c-byline a:visited,
+.s-article .c-heading--headline a:link,
+.s-article .c-heading--headline a:visited {
+	border-bottom: 0;
+	color: #2f2a2a;
+}
+
+/* Article Copy
+   ========================================================================== */
 
 .s-article > p + h2 {
 	margin-top: 36px;
 }
 
 .s-article > p + h3 {
+	margin-top: 24px;
+	margin-bottom: 12px;
+}
+
+.s-article > p + ol,
+.s-article > p + ul,
+.s-article > p + dl {
 	margin-top: 24px;
 	margin-bottom: 12px;
 }
@@ -30,14 +88,23 @@
 
 .s-article > header + p:first-of-type,
 .s-article > figure + p:first-of-type {
-	font-size: 23px;
-	line-height: 30px;
+	font-size: 1.4375em;
+	line-height: 1.3043478261;
 }
 
 .s-article > p + .o-media {
 	margin-top: 24px;
 	margin-bottom: 24px;
 }
+
+.s-article > ol,
+.s-article > ul {
+	padding-left: 0;
+	list-style-position: outside;
+}
+
+/* Article Blockquote
+   ========================================================================== */
 
 .s-article > .o-blockquote {
 	position: relative;
@@ -59,7 +126,7 @@
 .s-article > .o-blockquote::before {
 	content: '\201C';
 	position: absolute;
-	top: 0.25em;
+	top: -0.1em;
 	left: -0.15em;
 	color: #e7e6e4;
 	font-family:
@@ -73,6 +140,7 @@
 		arial,
 		sans-serif;
 	font-size: 6em;
+	line-height: 1;
 	z-index: -1;
 }
 
@@ -81,23 +149,17 @@
 	margin-bottom: 36px;
 }
 
-.s-article > ol,
-.s-article > ul {
-	padding-left: 0;
-	list-style-position: outside;
-}
-
 .s-article > .o-blockquote > p {
 	margin: 0;
 	margin-bottom: 0.5em;
-	font-size: 26px;
+	font-size: 1.625rem;
 	font-style: italic;
 	line-height: 1.1538461538;
 }
 
 .s-article > .o-blockquote footer,
 .s-article > .o-blockquote cite {
-	font-size: 16px;
+	font-size: 1rem;
 	font-style: normal;
 	line-height: 1.5;
 }

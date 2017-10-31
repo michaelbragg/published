@@ -1,4 +1,16 @@
 <?php
+/**
+ * Module: Single - Byline
+ *
+ * Template part for displaying posts.
+ *
+ * @package    ThoughtsIdeas\Published
+ * @subpackage Module\Single\Byline
+ * @version    1.0.0
+ * @author     Thoughts & Ideas <hello@thoughtsideas.uk>
+ * @copyright  Copyright (c) 2017 Thoughts & Ideas
+ * @license    https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
+ */
 
 $byline = sprintf(
 	/* translators: the post author */
@@ -25,12 +37,13 @@ $posted_on = sprintf(
 	'<li class="c-byline__item c-byline__published">' . $time_string . '</li>'
 );
 
- ?>
+	?>
 
 <ul class="c-byline o-list-bare">
-	<?php echo $byline; ?>
-	<?php echo $posted_on; ?>
+	<?php echo $byline; // WPCS: Xss. Ok. ?>
+	<?php echo $posted_on; // WPCS: Xss. Ok. ?>
 	<?php if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) { ?>
+	<?php /* @TODO Add code to display updated time. */ ?>
 	<li class="c-byline__item c-byline__updated">Updated <time>November 26, 1985</time></li>
 	<?php } ?>
 </ul>
