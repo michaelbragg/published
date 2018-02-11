@@ -33,6 +33,9 @@ before_install:
   - phpenv config-rm xdebug.ini
   - nvm install 6.11
 
+install:
+  - npm install
+
 before_script:
     # Set up WordPress installation.
   - export WP_DEVELOP_DIR=/tmp/wordpress
@@ -55,3 +58,5 @@ before_script:
 script:
   - ./vendor/bin/phpcs $WP_THEME_DIR/$WP_THEME_SLUG/
   - ./vendor/bin/phpmd $WP_THEME_DIR/$WP_THEME_SLUG/ text ./vendor/thoughtsideas/ti-wpcs/TI-WPMD/ruleset.xml
+  - npm test --prefix $WP_THEME_DIR/$WP_THEME_SLUG/
+  - npm run build --prefix $WP_THEME_DIR/$WP_THEME_SLUG/
