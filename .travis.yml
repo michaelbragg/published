@@ -20,7 +20,7 @@ matrix:
     - php: nightly
       env: WP_VERSION=master WP_MULTISITE=0
     - php: 7.1
-      env: WP_VERSION=4.8-branch WP_MULTISITE=0
+      env: WP_VERSION=4.8-branch WP_MULTISITE=0 SNIFF=1
     - php: 7.0
       env: WP_VERSION=4.8-branch WP_MULTISITE=0
     - php: 5.6
@@ -34,7 +34,7 @@ before_install:
   - nvm install 6.11
 
 install:
-  - npm install
+  - if [[ "$SNIFF" == "1" ]]; then npm install; fi
 
 before_script:
     # Set up WordPress installation.
@@ -52,11 +52,11 @@ before_script:
   # Setup WordPress
   - mysql -e "CREATE DATABASE wordpress;" -uroot
   # Install composer packages before trying to activate themes or plugins
-  - composer require thoughtsideas/ti-wpcs:dev-develop
-  - vendor/bin/phpcs --config-set default_standard TI-WPCS
+  - if [[ "$SNIFF" == "1" ]]; then composer require thoughtsideas/ti-wpcs:^1.1.1; fi
 
 script:
-  - ./vendor/bin/phpcs $WP_THEME_DIR/$WP_THEME_SLUG/
-  - ./vendor/bin/phpmd $WP_THEME_DIR/$WP_THEME_SLUG/ text ./vendor/thoughtsideas/ti-wpcs/TI-WPMD/ruleset.xml
-  - npm test --prefix $WP_THEME_DIR/$WP_THEME_SLUG/
-  - npm run build --prefix $WP_THEME_DIR/$WP_THEME_SLUG/
+  # Only run PHP Code tests on one environment to improve total test time.
+  - if [[ "$SNIFF" == "1" ]]; then ./vendor/bin/phpcs $WP_THEME_DIR/$WP_THEME_SLUG/ --standard=$WP_THEME_DIR/$WP_THEME_SLUG/phpcs.xml; fi
+  - if [[ "$SNIFF" == "1" ]]; then ./vendor/bin/phpmd $WP_THEME_DIR/$WP_THEME_SLUG/ text ./vendor/thoughtsideas/ti-wpcs/TI-WPMD/ruleset.xml; fi
+#  - if [[ "$SNIFF" == "1" ]]; then npm test --prefix $WP_THEME_DIR/$WP_THEME_SLUG/; fi
+  - if [[ "$SNIFF" == "1" ]]; then npm run build --prefix $WP_THEME_DIR/$WP_THEME_SLUG/; fi
