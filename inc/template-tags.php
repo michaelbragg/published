@@ -203,7 +203,7 @@ function ti_the_svg( $args = array() ) {
  * @TODO Extract to own plugin with to store in option table.
  */
 function the_copyright() {
-	esc_html_e( '&copy; 2002–2017 Michael Bragg', 'ti_published' );
+	esc_html_e( '&copy; 2002–2018 Michael Bragg', 'ti_published' );
 }
 
 /**
