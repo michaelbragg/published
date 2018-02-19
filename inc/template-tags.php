@@ -178,7 +178,7 @@ function ti_get_svg( $args = array() ) {
 	}
 	// Use absolute path in the Customizer so that icons show up in there.
 	if ( is_customize_preview() ) {
-		$svg .= '<use xlink:href="' . get_parent_theme_file_uri( '/assets/images/' . esc_attr( $args['type'] ) . '.svg#' . esc_attr( $args['type'] ) . '-' . esc_html( $args['name'] ) ) . '"></use>';
+		$svg .= '<use xlink:href="' . get_parent_theme_file_uri( '/ui/' . esc_attr( $args['type'] ) . '.svg#' . esc_attr( $args['type'] ) . '-' . esc_html( $args['name'] ) ) . '"></use>';
 		$svg .= '</svg>';
 		return $svg;
 	}
