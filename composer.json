@@ -27,13 +27,8 @@
   },
   "autoload": {},
   "scripts": {
-    "config-ti-wpcs": [
-      "\"vendor/bin/phpcs\" --config-set default_standard TI-WPCS"
-    ],
-    "post-install-cmd": "composer config-ti-wpcs",
-    "post-update-cmd": "composer config-ti-wpcs",
-    "test-phpcbf": "./vendor/bin/phpcbf ./ --standard=vendor/thoughtsideas/TI-WPCS/ti-wpcs/ruleset.xml",
-    "test-phpcs": "./vendor/bin/phpcs ./ --standard=vendor/thoughtsideas/TI-WPCS/ti-wpcs/ruleset.xml",
+    "test-phpcbf": "./vendor/bin/phpcbf --standard=phpcs.xml ./",
+    "test-phpcs": "./vendor/bin/phpcs --standard=phpcs.xml ./",
     "test-phpmd": "./vendor/bin/phpmd ./ text ./vendor/thoughtsideas/ti-wpcs/TI-WPMD/ruleset.xml",
     "test-phpcpd": "./vendor/bin/phpcpd ./ --regexps-exclude=#vendor/#,#node_modules/# --progress",
     "test-phpsc": "./vendor/bin/security-checker security:check composer.lock",

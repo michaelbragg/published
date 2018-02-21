@@ -27,30 +27,63 @@ $heading-section-font-size:                         1.2rem !default;
 $heading-section-line-height:                       1.1 !default;
 $heading-section-color:                             hsl(0, 0%, 20%) !default;
 
-.c-heading--page {
-	font-size: $heading-page-font-size;
-	line-height: $heading-page-line-height;
-	color: $heading-page-color;
+/** New */
+
+.c-heading--headline {
+	margin-bottom: 36px;
+	font-size: 4.0625rem;
+	line-height: 1.09375;
 }
 
-.c-heading--page-sub {
-	font-size: $heading-page-sub-font-size;
-	line-height: $heading-page-sub-line-height;
-	color: $heading-page-sub-color;
+.c-heading--sub {
+	margin-bottom: 24px;
+	font-size: 2.75rem;
+	line-height: 1.2;
+}
+
+.c-heading--,
+h3 {
+	font-size: 1.625rem;
+	line-height: 1.2307692308;
 }
 
 .c-heading--section {
-	font-size: $heading-section-font-size;
-	line-height: $heading-section-line-height;
-	color: $heading-section-color;
+	margin-bottom: 11px;
+	font-family:
+		'Karmina Sans',
+		karmina-sans,
+		-apple-system,
+		blinkmacsystemfont,
+		'Segoe UI',
+		roboto,
+		helvetica,
+		arial,
+		sans-serif;
+	font-size: 0.875rem;
+	line-height: 1;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	color: #af1e23;
 }
 
-.c-heading--main-sub {
-	color: $color-black;
-	font-size: $font-size-x-large;
-	font-weight: $font-weight-normal;
+.c-heading--byline {
+	font-family:
+		'Karmina Sans',
+		karmina-sans,
+		-apple-system,
+		blinkmacsystemfont,
+		'Segoe UI',
+		roboto,
+		helvetica,
+		arial,
+		sans-serif;
+	font-size: 1rem;
+	line-height: 1.5;
+	letter-spacing: 0.01px;
 }
 
-.c-heading--main-tertiary {
-	font-size: $font-size-large;
+.c-heading--byline time,
+.c-heading--byline a {
+	font-weight: 700;
+	color: #2f2a2a;
 }

@@ -1,22 +1,38 @@
 <?php
 /**
- * Module: Content – Default
+ * Singular
  *
- * Template part for displaying posts.
+ * Template file to display single pages and posts.
  *
  * @package    ThoughtsIdeas\Published
- * @subpackage Module\Content\Default
+ * @subpackage Singular\Default
  * @version    1.0.0
  * @author     Thoughts & Ideas <hello@thoughtsideas.uk>
  * @copyright  Copyright (c) 2017 Thoughts & Ideas
- * @license    https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
  * @link       https://codex.wordpress.org/Template_Hierarchy
+ * @license    https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
  */
 
 ?>
+
+<?php get_header(); ?>
+
+<main role="main" id="content">
+
+	<?php if ( have_posts() ) : ?>
+
+		<?php
+		/**
+		 * Start the Loop.
+		 */
+		?>
+		<?php while ( have_posts() ) : ?>
+			<?php the_post(); ?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'o-content s-article' ); ?>>
 
-	<header>
+	<header class="c-entry--header">
+
 		<?php /* @TODO Better formatting for muliple categories. */ ?>
 		<?php $categories = get_the_category( get_the_ID() ); ?>
 		<?php if ( $categories ) : ?>
@@ -27,25 +43,23 @@
 		</p>
 		<?php endif; ?>
 
-		<?php
-		if ( is_singular() ) :
-			the_title(
-				'<h1 class="c-heading--headline">',
-				'</h1>'
-			);
-			else :
-				the_title(
-					'<h2 class="c-heading--headline"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">',
-					'</a></h2>'
-				);
-			endif;
-			?>
+	<?php
+	the_title(
+		'<h1 class="c-heading--headline">',
+		'</h1>'
+	);
 
-			<?php if ( 'post' === get_post_type() ) : ?>
-				<div class="c-entry--meta">
-					<?php get_template_part( 'module-templates/entry', 'byline' ); ?>
-				</div>
-			<?php endif; ?>
+	if ( 'post' === get_post_type() ) :
+	?>
+		<div class="c-entry--meta">
+			<?php
+			get_template_part(
+				'module-templates/entry',
+				'byline'
+			);
+			?>
+		</div>
+	<?php endif; ?>
 
 	</header>
 
@@ -83,3 +97,17 @@
 	</footer>
 
 </article><!-- #post-<?php the_ID(); ?> -->
+
+		<?php endwhile; ?>
+
+		<?php the_posts_navigation(); ?>
+
+	<?php else : ?>
+
+		<?php get_template_part( 'module-templates/content', 'none' ); ?>
+
+	<?php endif; ?>
+
+</main>
+
+<?php get_footer(); ?>

@@ -33,7 +33,7 @@ module.exports = {
         "function-url-quotes": "always",
         "function-whitespace-after": "always",
         "number-leading-zero": "always",
-        "number-max-precision": 4,
+        "number-max-precision": [4,{"severity": "warning"}],
         "number-no-trailing-zeros": true,
         "string-no-newline": true,
         "string-quotes": "single",
@@ -143,7 +143,10 @@ module.exports = {
             "after-comment",
             "inside-block"
             ],
-            "ignoreAtRules": [ "else" ]
+            "ignoreAtRules": [
+              "else",
+              "media"
+            ]
         }
         ],
         "at-rule-blacklist": [ "debug" ],
@@ -196,15 +199,25 @@ module.exports = {
         "no-descending-specificity": true,
         "no-duplicate-selectors": true,
         "no-empty-source": true,
-        "no-eol-whitespace": true,
+        "no-eol-whitespace": [
+          true,
+          {
+            ignore: ["empty-lines"]
+          }
+        ],
         "no-extra-semicolons": true,
         "no-missing-end-of-source-newline": true,
         "no-unknown-animations": true,
         "plugin/no-unsupported-browser-features": [
-        true,
-        {
-          "severity": "warning"
-        }
+          true,
+          {
+            "severity": "warning",
+            "browsers": [
+              "> 5%",
+              "last 2 versions",
+              "not ie 10"
+            ]
+          }
         ]
     }
 }
