@@ -26,7 +26,10 @@ jobs:
   - stage: deployment
     install: npm install
     before_script: skip
-    script: npm run build
+    script:
+      - ls -la
+      - npm run build
+      - ls -la
     deploy:
       provider: releases
       api_key:
