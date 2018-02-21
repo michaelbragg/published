@@ -35,7 +35,7 @@ jobs:
       api_key:
         secure: eKvDiB+VpF15OqWsVCd+HgZDzsLiUOshVk3VSBv4VlzMycDBCsLsxDBgqzSImrZZcKz4aSiFuV9OA/ccenh4/rPdPTiUp9527fLmyjur3SnxxkJs3vKE/sHSYByH3xG+Mt8KMW6eciSU7M7cuhTUF8tVXybqBN97A8168v7b6gLYON/AQ0fhvcrK/XYqAfmKBMd6xjui3DsVQ/KDq6IHlIiRQQmZpaug9Nh/DHDp8YEx5ek2Kzjk5sQiejFmbdw037h7Y+TNOMtWXLK2HT3QNl8UTwhNHpDVzv5bcLBYlyPRUQoDNCx33rUHYTyB0113vXxCMEET9pYWtM7qQM5NYgbBhoY2c9IP3MTIaRKlgYDh17i6SMAKmT1PbQA3KNXsSJTQE0nsC84GH/qvwQ00/x7SlFxWaWI0MfHsi2wF0GcGrXIflVq0KS76ihq6rf3AI3OlfMAcFLVHV7UFLujCASVNqbISxeLEiXM6HV19eWPl9aId95wDWt+XmcojP588XKqb1eInL2ZLcCRY0yfMZg4ttusD39fN1VnJpaY7skfmQp2TKplWPfjX/nU1g4epwFK/MbXh6rLXL1yh8g3EjgyWeKMCyJrTELIo4m+SobC2kjcYmsrHrDfiNZeGWudOsS24OfCusi/wd4yOqXQfiM7bcTFPZ7IKwJ2Y0KItMpg=
       file_glob: true
-      file: "/*"
+      file: "index.php"
       skip_cleanup: true
       on:
         repo: michaelbragg/published
