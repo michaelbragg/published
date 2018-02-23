@@ -2,10 +2,17 @@
 # https://git-scm.com/docs/gitattributes#_creating_an_archive
 /_scripts export-ignore
 /_tests export-ignore
+/node_modules
+/vendor
 /.github export-ignore
 /.gitattributes export-ignore
 /.gitignore export-ignore
-
+/.travis.yml export-ignore
+/composer.json export-ignore
+/composer.lock export-ignore
+/package.json export-ignore
+/package-lock.json export-ignore
+/phpcs.xml export-ignore
 
 # Exclude files from GitHub's language statistics
 # https://github.com/github/linguist#using-gitattributes
