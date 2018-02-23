@@ -19,9 +19,6 @@ $byline = sprintf(
 );
 
 $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
-}
 
 $time_string = sprintf(
 	$time_string,
@@ -30,20 +27,18 @@ $time_string = sprintf(
 	esc_attr( get_the_modified_date( 'c' ) ),
 	esc_html( get_the_modified_date() )
 );
-
-$posted_on = sprintf(
-	/* translators: the date the post was published */
-	esc_html_x( 'Published %s', 'post date', 'ti-published' ),
-	'<li class="c-byline__item c-byline__published">' . $time_string . '</li>'
-);
-
 	?>
 
 <ul class="c-byline o-list-bare">
 	<?php echo $byline; // WPCS: Xss. Ok. ?>
-	<?php echo $posted_on; // WPCS: Xss. Ok. ?>
-	<?php if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) { ?>
-	<?php /* @TODO Add code to display updated time. */ ?>
-	<li class="c-byline__item c-byline__updated">Updated <time>November 26, 1985</time></li>
-	<?php } ?>
+	<?php $posted_on = printf(
+		/* translators: the date the post was published */
+		esc_html_x( 'Published %s', 'post date', 'ti-published' ),
+		'<li class="c-byline__item c-byline__published">' . $time_string . '</li>'
+	);?>
+	<?php if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) : ?>
+		<li class="c-byline__item c-byline__updated">
+			Updated <time datetime="<?php the_modified_date( 'Y-m-dTH:i' ); ?>"><?php the_modified_date(); ?></time>
+		</li>
+	<?php endif; ?>
 </ul>
