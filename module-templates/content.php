@@ -49,6 +49,13 @@
 
 	</header>
 
+	<?php if ( is_singular() && has_post_thumbnail() ) : ?>
+		<aside class="o-media o-media--full">
+			<?php the_post_thumbnail( 'full' ); ?>
+		</aside>
+	<?php endif; ?>
+
+
 	<?php if ( is_home() || is_archive() ) : ?>
 	<?php the_excerpt(); ?>
 	<?php else : ?>
